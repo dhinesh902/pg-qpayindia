@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PG QPAY INDIA</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="d-flex vh-100">
+      <!---------------- Sidebar Start ---------------->
+      <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header py-4 px-3 border-bottom">
+          <img
+            class="rounded mx-auto d-block"
+            src="https://pg.qpayindia.com/WWWS/Images/logo.jpg"
+            alt="logo"
+          />
+        </div>
+
+        <div class="sidebar-menu">
+          <ul class="nav flex-column p-2" id="sidebarAccordion">
+            <li class="nav-item mb-2">
+              <a href="#home" class="nav-link page-link active">
+                <i class="bi bi-house-door me-2"></i>
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item mb-2">
+              <a href="#change-password" class="nav-link page-link">
+                <i class="bi bi-key me-2"></i>
+                Change Password
+              </a>
+            </li>
+
+            <!-- Master Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#masterSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span>
+                  <i class="bi bi-people me-2"></i>
+                  Master
+                </span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="masterSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a href="#master/users" class="nav-link page-link">User</a>
+                </li>
+                <li class="mb-1">
+                  <a href="#master/currency" class="nav-link page-link"
+                    >Currency</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/bank" class="nav-link page-link">Bank</a>
+                </li>
+                <li class="mb-1">
+                  <a href="#master/merchant" class="nav-link page-link"
+                    >Merchant</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/sub-merchant" class="nav-link page-link"
+                    >Sub-Merchant</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/tdr-split" class="nav-link page-link"
+                    >TDR Split</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#master/merchant-agreed-tdr"
+                    class="nav-link page-link"
+                    >Merchant Agreed TDR</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/business-type" class="nav-link page-link"
+                    >Business Type</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/reseller" class="nav-link page-link"
+                    >Reseller</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#master/reseller-commission"
+                    class="nav-link page-link"
+                    >Reseller Commission</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#master/menu-master" class="nav-link page-link"
+                    >Menu master</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#master/merchant-menu-mapping"
+                    class="nav-link page-link"
+                    >Merchant Menu Mapping</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- MIS Repots -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#misreports"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span>
+                  <i class="bi bi-bar-chart me-2"></i>
+                  MIS Reports
+                </span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="misreports"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/qpay-commission"
+                    class="nav-link page-link"
+                    >Qpay Commison</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/qpay-commission-bank-wise"
+                    class="nav-link page-link"
+                    >QPay Commission - Bankwise</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/monthly-transaction-summary"
+                    class="nav-link page-link"
+                    >Monthly Transaction Summary</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/management-summary"
+                    class="nav-link page-link"
+                    >Management Summary</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/qpay-commission-payment-type"
+                    class="nav-link page-link"
+                    >Qpay Commission - Payment Type</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#mis-reports/payment-option-wise-revenue"
+                    class="nav-link page-link"
+                    >Payment Option Wise Revenue</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Invoice Generation Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#invoiceSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span
+                  ><i class="bi bi-receipt me-2"></i> Invoice Generation</span
+                >
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="invoiceSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a href="#invoice/monthly-invoice" class="nav-link page-link"
+                    >Monthly Invoice</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#invoice/daywise-invoice" class="nav-link page-link"
+                    >Daywise Invoice</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Settlement Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#settlementSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span><i class="bi bi-cash-stack me-2"></i> Settlement</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="settlementSubmenu"
+              >
+                <li class="mb-1">
+                  <a href="#settlement/upload-mpr" class="nav-link page-link"
+                    >Upload MPR</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#settlement/generate-mis" class="nav-link page-link"
+                    >Generate MIS</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#settlement/download-mis" class="nav-link page-link"
+                    >Download MIS</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/settlement-approval"
+                    class="nav-link page-link"
+                    >Settlement Approval</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/block-settlement"
+                    class="nav-link page-link"
+                    >Block Settlement</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/view-blocked-settlement"
+                    class="nav-link page-link"
+                    >View Blocked Settlement</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/settled-unsettled-transactions"
+                    class="nav-link page-link"
+                    >Settled & UnSettled Transactions</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/merchant-weekly-settlement"
+                    class="nav-link page-link"
+                    >Merchant Weekly Settlement</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#settlement/gst-datewise" class="nav-link page-link"
+                    >GST - Datewise</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/gst-for-government"
+                    class="nav-link page-link"
+                    >GST for Government</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/settlement-data-modify"
+                    class="nav-link page-link"
+                    >Settlement data modify</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/merchant-wise-settlement"
+                    class="nav-link page-link"
+                    >Merchant Wise Settlement</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settlement/reseller-funds-transfer"
+                    class="nav-link page-link"
+                    >Reseller Funds Transfer</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Reports Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#reportsSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span><i class="bi bi-bar-chart me-2"></i> Reports</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="reportsSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#reports/transaction-history"
+                    class="nav-link page-link"
+                    >Transaction History</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/merchant-order-id"
+                    class="nav-link page-link"
+                    >Merchant Order ID</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#reports/qpay-id" class="nav-link page-link"
+                    >QPay ID</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#reports/card-holder-name" class="nav-link page-link"
+                    >Card Holder Name</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/submerchant-transaction"
+                    class="nav-link page-link"
+                    >SubMerchant Transaction</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/transaction-details"
+                    class="nav-link page-link"
+                    >Transaction Details</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/reseller-transactions"
+                    class="nav-link page-link"
+                    >Reseller Transactions</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/reseller-settlement"
+                    class="nav-link page-link"
+                    >Reseller Settlement</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#reports/settlement-data" class="nav-link page-link"
+                    >Settlement Data</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#reports/loan-emi-details" class="nav-link page-link"
+                    >Loan EMI Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Technical Team Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#technicalSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span
+                  ><i class="bi bi-pc-display me-2"></i> Technical team</span
+                >
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="technicalSubmenu"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#technical/transaction-status-change"
+                    class="nav-link page-link"
+                    >Transaction Status Change</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#technical/bank-tid-transactions"
+                    class="nav-link page-link"
+                    >Bank TID Transactions</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#technical/pci-training" class="nav-link page-link"
+                    >PCI Training</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#technical/activity" class="nav-link page-link"
+                    >Activity</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#technical/login-bad-attempt"
+                    class="nav-link page-link"
+                    >Login & Bad attempt</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#technical/login-report" class="nav-link page-link"
+                    >Login Report</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#technical/pci-training-logs"
+                    class="nav-link page-link"
+                    >PCI Training Logs</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- NACH Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#nachSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span><i class="bi bi-bank me-2"></i> NACH</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="nachSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#nach/mandate-status-update"
+                    class="nav-link page-link"
+                    >Mandate Status Update</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/payment-collection-data-download"
+                    class="nav-link page-link"
+                    >Payment Collection Data Download</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/nach-payment-status-update"
+                    class="nav-link page-link"
+                    >NACH Payment Status Update</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#nach/nach-payment-status" class="nav-link page-link"
+                    >NACH payment Status</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/nach-payment-data-upload"
+                    class="nav-link page-link"
+                    >NACH Payment Data Upload</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#nach/mandate-data" class="nav-link page-link"
+                    >Mandate Data</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/nach-payment-notification"
+                    class="nav-link page-link"
+                    >NACH Payment Notification</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#nach/sms-report" class="nav-link page-link"
+                    >SMS Report</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/nach-data-by-customer-name"
+                    class="nav-link page-link"
+                    >NACH Data by Customer Name</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#nach/cancellation-request-xml"
+                    class="nav-link page-link"
+                    >Cancellation Request XML</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#supportSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span><i class="bi bi-question-circle me-2"></i> Support</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="supportSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#support/pending-status-update"
+                    class="nav-link page-link"
+                    >Pending Status Update</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/request-response-logs"
+                    class="nav-link page-link"
+                    >Request Response Logs</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/transaction-track-history"
+                    class="nav-link page-link"
+                    >Transaction Track History</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#support/loan-data-update" class="nav-link page-link"
+                    >Loan Data Update</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/loan-payment-preview"
+                    class="nav-link page-link"
+                    >Loan Payment Preview</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/check-transaction"
+                    class="nav-link page-link"
+                    >Check Transaction</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/tdr-credit-report"
+                    class="nav-link page-link"
+                    >TDR Credit Report</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/loan-data-by-mobile-number"
+                    class="nav-link page-link"
+                    >Loan Data by Mobile Number</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#support/merchant-mis" class="nav-link page-link"
+                    >Merchant MIS</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#support/merchant-gateway-transaction"
+                    class="nav-link page-link"
+                    >Merchant Gateway Transaction</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Monitering Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#moniteringSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span><i class="bi bi-display me-2"></i> Monitering</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="moniteringSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#monitering/hit-for-event-type"
+                    class="nav-link page-link"
+                    >Hit for Event Type</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!---------------- Sidebar End ---------------->
+
+      <!-- Main Content -->
+      <div class="main-wrapper">
+        <header
+          class="text-white px-4 py-2 d-flex justify-content-between align-items-center shadow-sm"
+        >
+          <div class="d-flex align-items-center">
+            <button
+              id="menuToggle"
+              class="btn btn-link text-white d-md-none me-3 p-0"
+            >
+              <i class="bi bi-list fs-2"></i>
+            </button>
+            <div class="d-flex align-items-center">
+              <span class="fs-6 fw-bold" style="letter-spacing: 1px"
+                >QPAY INDIA</span
+              >
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-4">
+            <div
+              class="d-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-pill px-2 py-1 border border-white border-opacity-25"
+              style="backdrop-filter: blur(4px)"
+            >
+              <div
+                class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow-sm"
+                style="width: 40px; height: 40px"
+              >
+                <i class="bi bi-person-fill fs-4" style="color: #28666e"></i>
+              </div>
+              <div class="d-none d-md-block lh-1 text-start pe-3 pt-1">
+                <div class="fw-semibold" style="font-size: 0.95rem">
+                  Welcome, Tirupoomi
+                </div>
+                <small class="text-white-50" style="font-size: 0.8rem"
+                  >Admin</small
+                >
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="d-flex align-items-center justify-content-center rounded-circle bg-white shadow-sm text-decoration-none"
+              style="width: 40px; height: 40px; transition: transform 0.2s"
+              onmouseover="this.style.transform = 'scale(1.05)'"
+              onmouseout="this.style.transform = 'scale(1)'"
+              title="Logout"
+            >
+              <i class="bi bi-box-arrow-right fs-5" style="color: #ff0404"></i>
+            </a>
+          </div>
+        </header>
+
+        <main class="content">
+          <section id="home" class="page-section"></section>
+          <section id="change-password" class="page-section d-none"></section>
+
+          <!-- Master Pages -->
+          <section id="master/users" class="page-section d-none"></section>
+          <section id="master/currency" class="page-section d-none"></section>
+          <section id="master/bank" class="page-section d-none"></section>
+          <section id="master/merchant" class="page-section d-none"></section>
+          <section
+            id="master/sub-merchant"
+            class="page-section d-none"
+          ></section>
+          <section id="master/tdr-split" class="page-section d-none"></section>
+          <section
+            id="master/merchant-agreed-tdr"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="master/business-type"
+            class="page-section d-none"
+          ></section>
+          <section id="master/reseller" class="page-section d-none"></section>
+          <section
+            id="master/reseller-commission"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="master/menu-master"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="master/merchant-menu-mapping"
+            class="page-section d-none"
+          ></section>
+
+          <!-- MIS Reports Pages -->
+          <section
+            id="mis-reports/qpay-commission"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="mis-reports/qpay-commission-bank-wise"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="mis-reports/monthly-transaction-summary"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="mis-reports/management-summary"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="mis-reports/qpay-commission-payment-type"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="mis-reports/payment-option-wise-revenue"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Invoice Pages -->
+          <section
+            id="invoice/monthly-invoice"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="invoice/daywise-invoice"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Settlement Pages -->
+          <section
+            id="settlement/upload-mpr"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/generate-mis"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/download-mis"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/settlement-approval"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/block-settlement"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/view-blocked-settlement"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/settled-unsettled-transactions"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/merchant-weekly-settlement"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/gst-datewise"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/gst-for-government"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/settlement-data-modify"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/merchant-wise-settlement"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settlement/reseller-funds-transfer"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Transaction Pages -->
+          <section
+            id="reports/transaction-history"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/merchant-order-id"
+            class="page-section d-none"
+          ></section>
+          <section id="reports/qpay-id" class="page-section d-none"></section>
+          <section
+            id="reports/card-holder-name"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/submerchant-transaction"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/transaction-details"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/reseller-transactions"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/reseller-settlement"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/settlement-data"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/loan-emi-details"
+            class="page-section d-none"
+          ></section>
+          <!-- Technical Pages -->
+          <section
+            id="technical/transaction-status-change"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/bank-tid-transactions"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/pci-training"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/activity"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/login-bad-attempt"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/login-report"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="technical/pci-training-logs"
+            class="page-section d-none"
+          ></section>
+          <!-- NACH Pages -->
+          <section
+            id="nach/mandate-status-update"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="nach/payment-collection-data-download"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="nach/nach-payment-status-update"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="nach/nach-payment-status"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="nach/nach-payment-data-upload"
+            class="page-section d-none"
+          ></section>
+          <section id="nach/mandate-data" class="page-section d-none"></section>
+          <section
+            id="nach/nach-payment-notification"
+            class="page-section d-none"
+          ></section>
+          <section id="nach/sms-report" class="page-section d-none"></section>
+          <section
+            id="nach/nach-data-by-customer-name"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="nach/cancellation-request-xml"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Support Pages -->
+          <section
+            id="support/pending-status-update"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/request-response-logs"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/transaction-track-history"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/loan-data-update"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/loan-payment-preview"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/check-transaction"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/tdr-credit-report"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/loan-data-by-mobile-number"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/merchant-mis"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="support/merchant-gateway-transaction"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Monitering Pages -->
+          <section
+            id="monitering/hit-for-event-type"
+            class="page-section d-none"
+          ></section>
+
+          <div class="text-center mt-4">
+            <p class="fw-bold mb-0">
+              Copyright © 2026 QPay. All Rights Reserved.
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const pageLinks = document.querySelectorAll(".page-link");
+      const sections = document.querySelectorAll(".page-section");
+      const sidebar = document.getElementById("sidebar");
+      const menuToggle = document.getElementById("menuToggle");
+
+      const routes = {
+        home: "Home/home.html",
+        "change-password": "changepassword/change-password.html",
+        "master/users": "master/users.html",
+        "master/currency": "master/currency.html",
+        "master/bank": "master/bank.html",
+        "master/merchant": "master/merchant.html",
+        "master/sub-merchant": "master/sub-merchant.html",
+        "master/tdr-split": "master/tdr-split.html",
+        "master/merchant-agreed-tdr": "master/merchant-agreed-tdr.html",
+        "master/business-type": "master/business-type.html",
+        "master/reseller": "master/reseller.html",
+        "master/reseller-commission": "master/reseller-commission.html",
+        "master/menu-master": "master/menu-master.html",
+        "master/merchant-menu-mapping": "master/merchant-menu-mapping.html",
+        // mis reports pages
+        "mis-reports/qpay-commission": "mis-reports/qpay-commission.html",
+        "mis-reports/qpay-commission-bank-wise":
+          "mis-reports/qpay-commission-bank-wise.html",
+        "mis-reports/monthly-transaction-summary":
+          "mis-reports/monthly-transaction-summary.html",
+        "mis-reports/management-summary": "mis-reports/management-summary.html",
+        "mis-reports/qpay-commission-payment-type":
+          "mis-reports/qpay-commission-payment-type.html",
+        "mis-reports/payment-option-wise-revenue":
+          "mis-reports/payment-option-wise-revenue.html",
+        // invoice pages
+        "invoice/monthly-invoice": "invoice/monthly-invoice.html",
+        "invoice/daywise-invoice": "invoice/daywise-invoice.html",
+        //settlement pages
+        "settlement/upload-mpr": "settlement/upload-mpr.html",
+        "settlement/generate-mis": "settlement/generate-mis.html",
+        "settlement/download-mis": "settlement/download-mis.html",
+        "settlement/settlement-approval": "settlement/settlement-approval.html",
+        "settlement/block-settlement": "settlement/block-settlement.html",
+        "settlement/view-blocked-settlement":
+          "settlement/view-blocked-settlement.html",
+        "settlement/settled-unsettled-transactions":
+          "settlement/settled-unsettled-transactions.html",
+        "settlement/merchant-weekly-settlement":
+          "settlement/merchant-weekly-settlement.html",
+        "settlement/gst-datewise": "settlement/gst-datewise.html",
+        "settlement/gst-for-government": "settlement/gst-for-government.html",
+        "settlement/settlement-data-modify":
+          "settlement/settlement-data-modify.html",
+        "settlement/merchant-wise-settlement":
+          "settlement/merchant-wise-settlement.html",
+        "settlement/reseller-funds-transfer":
+          "settlement/reseller-funds-transfer.html",
+        //reports pages
+        "reports/transaction-history": "reports/transaction-history.html",
+        "reports/merchant-order-id": "reports/merchant-order-id.html",
+        "reports/qpay-id": "reports/qpay-id.html",
+        "reports/card-holder-name": "reports/card-holder-name.html",
+        "reports/submerchant-transaction":
+          "reports/submerchant-transaction.html",
+        "reports/transaction-details": "reports/transaction-details.html",
+        "reports/reseller-transactions": "reports/reseller-transactions.html",
+        "reports/reseller-settlement": "reports/reseller-settlement.html",
+        "reports/settlement-data": "reports/settlement-data.html",
+        "reports/loan-emi-details": "reports/loan-emi-details.html",
+        //technical pages
+        "technical/transaction-status-change":
+          "technical/transaction-status-change.html",
+        "technical/bank-tid-transactions":
+          "technical/bank-tid-transactions.html",
+        "technical/pci-training": "technical/pci-training.html",
+        "technical/activity": "technical/activity.html",
+        "technical/login-bad-attempt": "technical/login-bad-attempt.html",
+        "technical/login-report": "technical/login-report.html",
+        "technical/pci-training-logs": "technical/pci-training-logs.html",
+        //nach pages
+        "nach/mandate-status-update": "nach/mandate-status-update.html",
+        "nach/payment-collection-data-download":
+          "nach/payment-collection-data-download.html",
+        "nach/nach-payment-status-update":
+          "nach/nach-payment-status-update.html",
+        "nach/nach-payment-status": "nach/nach-payment-status.html",
+        "nach/nach-payment-data-upload": "nach/nach-payment-data-upload.html",
+        "nach/mandate-data": "nach/mandate-data.html",
+        "nach/nach-payment-notification": "nach/nach-payment-notification.html",
+        "nach/sms-report": "nach/sms-report.html",
+        "nach/nach-data-by-customer-name":
+          "nach/nach-data-by-customer-name.html",
+        "nach/cancellation-request-xml": "nach/cancellation-request-xml.html",
+        //support pages
+        "support/pending-status-update": "support/pending-status-update.html",
+        "support/request-response-logs": "support/request-response-logs.html",
+        "support/transaction-track-history":
+          "support/transaction-track-history.html",
+        "support/loan-data-update": "support/loan-data-update.html",
+        "support/loan-payment-preview": "support/loan-payment-preview.html",
+        "support/check-transaction": "support/check-transaction.html",
+        "support/tdr-credit-report": "support/tdr-credit-report.html",
+        "support/loan-data-by-mobile-number":
+          "support/loan-data-by-mobile-number.html",
+        "support/merchant-mis": "support/merchant-mis.html",
+        "support/merchant-gateway-transaction":
+          "support/merchant-gateway-transaction.html",
+        //monitering pages
+        "monitering/hit-for-event-type": "monitering/hit-for-event-type.html",
+      };
+
+      async function loadPage(url) {
+        try {
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            throw new Error("Page not found");
+          }
+
+          return await response.text();
+        } catch (error) {
+          return `
+          <div class="alert alert-danger">
+            Unable to load ${url}
+          </div>
+        `;
+        }
+      }
+
+      async function updateRoute() {
+        const route = window.location.hash.replace("#", "") || "home";
+
+        const target = document.getElementById(route) ? route : "home";
+
+        if (routes[target]) {
+          const section = document.getElementById(target);
+
+          if (!section.dataset.loaded) {
+            section.innerHTML = await loadPage(routes[target]);
+            section.dataset.loaded = "true";
+          }
+        }
+
+        sections.forEach((section) => {
+          section.classList.toggle("d-none", section.id !== target);
+        });
+
+        pageLinks.forEach((link) => {
+          const href = link.getAttribute("href").replace("#", "");
+
+          link.classList.toggle("active", href === target);
+        });
+
+        if (window.innerWidth < 768) {
+          sidebar.classList.remove("sidebar-open");
+        }
+      }
+
+      pageLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const route = this.getAttribute("href").replace("#", "");
+          window.location.hash = route;
+        });
+      });
+
+      // Robust Accordion Logic
+      const allSidebarLinks = document.querySelectorAll(".sidebar .nav-link");
+      allSidebarLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const isToggle = this.hasAttribute("data-bs-toggle");
+          const isSubmenuItem = this.closest(".collapse") !== null;
+          const targetId = this.getAttribute("data-bs-target");
+
+          // If we clicked a top-level menu (normal or expandable), close any currently open expandable menus
+          if (!isSubmenuItem) {
+            const openMenus = document.querySelectorAll(
+              ".sidebar .collapse.show",
+            );
+            openMenus.forEach((menu) => {
+              // Don't manually close the one we are currently trying to toggle (Bootstrap handles it)
+              if (isToggle && targetId === "#" + menu.id) {
+                return;
+              }
+              const bsCollapse = bootstrap.Collapse.getInstance(menu);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              } else {
+                menu.classList.remove("show");
+              }
+            });
+          }
+        });
+      });
+
+      window.addEventListener("hashchange", updateRoute);
+
+      window.addEventListener("DOMContentLoaded", () => {
+        updateRoute();
+      });
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("sidebar-open");
+      });
+    </script>
+  </body>
+</html>
