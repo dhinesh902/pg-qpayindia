@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -22,7 +23,7 @@
     <div class="d-flex vh-100">
       <!---------------- Sidebar Start ---------------->
       <nav id="sidebar" class="sidebar">
-        <div class="sidebar-header py-4 px-3 border-bottom">
+        <div class="sidebar-header py-2 px-2 border-bottom bg-white">
           <img
             class="rounded mx-auto d-block"
             src="https://pg.qpayindia.com/WWWS/Images/logo.jpg"
@@ -691,17 +692,14 @@
 
           <div class="d-flex align-items-center gap-4">
             <div
-              class="d-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-pill px-2 py-1 border border-white border-opacity-25"
+              class="d-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-pill px-3 py-2 border border-white border-opacity-25"
               style="backdrop-filter: blur(4px)"
             >
-              <div
-                class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow-sm"
-                style="width: 40px; height: 40px"
-              >
-                <i class="bi bi-person-fill fs-4" style="color: #28666e"></i>
-              </div>
-              <div class="d-none d-md-block lh-1 text-start pe-3 pt-1">
-                <div class="fw-semibold" style="font-size: 0.95rem">
+              <div class="lh-1 text-start pe-3 pt-1">
+                <div
+                  class="fw-semibold text-truncate"
+                  style="font-size: 0.95rem; max-width: 150px"
+                >
                   Welcome, Tirupoomi
                 </div>
                 <small class="text-white-50" style="font-size: 0.8rem"
@@ -731,7 +729,9 @@
           <section id="master/users" class="page-section d-none"></section>
           <section id="master/currency" class="page-section d-none"></section>
           <section id="master/bank" class="page-section d-none"></section>
+          <section id="master/bankedit" class="page-section d-none"></section>
           <section id="master/merchant" class="page-section d-none"></section>
+          <section id="master/add-merchant" class="page-section d-none"></section>
           <section
             id="master/sub-merchant"
             class="page-section d-none"
@@ -999,18 +999,16 @@
             id="monitering/hit-for-event-type"
             class="page-section d-none"
           ></section>
-
-          <div class="text-center mt-4">
-            <p class="fw-bold mb-0">
-              Copyright © 2026 QPay. All Rights Reserved.
-            </p>
-          </div>
         </main>
+        <footer class="text-white text-center py-3">
+          <p class="mb-0">Copyright © 2026 QPay. All Rights Reserved.</p>
+        </footer>
       </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script>
       const pageLinks = document.querySelectorAll(".page-link");
       const sections = document.querySelectorAll(".page-section");
@@ -1022,8 +1020,10 @@
         "change-password": "changepassword/change-password.html",
         "master/users": "master/users.html",
         "master/currency": "master/currency.html",
-        "master/bank": "master/bank.html",
-        "master/merchant": "master/merchant.html",
+        "master/bank": "master/bank/bank.html",
+        "master/bankedit": "master/bank/bankedit.html",
+        "master/merchant": "master/merchant/merchant.html",
+        "master/add-merchant": "master/merchant/add-merchant.html",
         "master/sub-merchant": "master/sub-merchant.html",
         "master/tdr-split": "master/tdr-split.html",
         "master/merchant-agreed-tdr": "master/merchant-agreed-tdr.html",
@@ -1148,6 +1148,16 @@
 
           if (!section.dataset.loaded) {
             section.innerHTML = await loadPage(routes[target]);
+            
+            // Execute scripts loaded via AJAX
+            const scripts = section.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement('script');
+              Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+              newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+              oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+
             section.dataset.loaded = "true";
           }
         }
@@ -1212,6 +1222,17 @@
 
       menuToggle.addEventListener("click", () => {
         sidebar.classList.toggle("sidebar-open");
+      });
+
+      // Close sidebar when clicking outside in mobile view
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth < 768) {
+          if (sidebar.classList.contains("sidebar-open")) {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+              sidebar.classList.remove("sidebar-open");
+            }
+          }
+        }
       });
     </script>
   </body>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchant Add</title>
+  </head>
+  <body>
+    <div>
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="fw-bold mb-0">Add Merchant</h5>
+        <a href="#master/merchant" class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-arrow-left me-1"></i> Back to List
+        </a>
+      </div>
+
+      <div class="card shadow-sm border mb-4 rounded-3">
+        <div class="card-body p-4 bg-white">
+          <h6 class="fw-bold mb-4 text-dark border-bottom pb-2">
+            Merchant Details
+          </h6>
+          <form class="row g-3">
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small"
+                >Merchant Name <strong class="text-danger">*</strong></label
+              >
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small"
+                >Contact Name <strong class="text-danger">*</strong></label
+              >
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small"
+                >City <strong class="text-danger">*</strong></label
+              >
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="col-12 mt-4 d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-warning text-dark">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
