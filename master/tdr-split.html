@@ -1,1 +1,449 @@
-<div class="p-4"><h3>Tdr Split</h3><p>This is the Tdr Split page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TDR Split</title>
+  </head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">TDR Split</h5>
+
+      <!-- Combined Main Card -->
+      <div class="card border border-light shadow-sm mb-4 rounded-2">
+        <div class="card-body p-4">
+          <form class="row g-4">
+            <!-- Merchant Select -->
+            <div class="col-12">
+              <div class="row align-items-end">
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <label
+                    for="merchantSelect"
+                    class="form-label fw-semibold small"
+                  >
+                    Merchant <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="form-select" id="merchantSelect" required>
+                    <option value="" selected disabled>--Select--</option>
+                    <option value="1">Merchant A</option>
+                    <option value="2">Merchant B</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-8 text-md-end d-grid d-md-block">
+                  <button type="submit" class="btn btn-primary">
+                    Get Split TDR
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- Currency Form -->
+          <div class="col-12 mt-4 mb-4">
+            <hr class="text-muted opacity-25 m-0" />
+          </div>
+          <form class="row g-4">
+            <!-- Row 1 -->
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Currency</label>
+              <select class="form-select">
+                <option value="" selected disabled>--Select--</option>
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small"
+                >Transaction Type</label
+              >
+              <select class="form-select">
+                <option value="" selected disabled>--Select--</option>
+                <option value="sale">Sale</option>
+                <option value="refund">Refund</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Bank TID</label>
+              <select class="form-select">
+                <option value="" selected disabled>--Select--</option>
+                <option value="tid1">TID 1</option>
+                <option value="tid2">TID 2</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Payment Option</label>
+              <select class="form-select">
+                <option value="" selected disabled>--Select--</option>
+                <option value="cc">Credit Card</option>
+                <option value="dc">Debit Card</option>
+              </select>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Amount Range</label>
+              <div class="d-flex flex-wrap gap-4 mt-1">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rangeLe2000"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="rangeLe2000"
+                    >&lt;=2000</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rangeGt2000"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="rangeGt2000"
+                    >&gt;2000</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rangeAny"
+                  />
+                  <label class="form-check-label small fw-medium" for="rangeAny"
+                    >Any Amount</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Status</label>
+              <div class="d-flex flex-wrap gap-4 mt-1">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="statusActive"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="statusActive"
+                    >Active</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="statusDeactive"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="statusDeactive"
+                    >Deactive</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">QPay TDR</label>
+              <input
+                type="text"
+                class="form-control"
+                style="background: #f5f5f5;"
+                readonly
+              />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">QPay TDR Unit</label>
+              <div class="d-flex flex-wrap gap-4 mt-2">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="qpayUnitPct"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="qpayUnitPct"
+                    >%</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="qpayUnitFlat"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="qpayUnitFlat"
+                    >Flat Rate</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Bank TDR</label>
+              <input
+                type="text"
+                class="form-control bg-light"
+                placeholder="Bank TDR"
+                readonly
+              />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Bank TDR Unit</label>
+              <div class="d-flex flex-wrap gap-4 mt-2">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="bankUnitPct"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="bankUnitPct"
+                    >%</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="bankUnitFlat"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="bankUnitFlat"
+                    >Flat Rate</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="col-12 mt-3 d-flex gap-2">
+              <button type="submit" class="btn btn-primary px-4">Submit</button>
+              <button type="button" class="btn btn-warning text-dark px-4">
+                Cancel
+              </button>
+            </div>
+          </form>
+
+          <!-- Download Split TDR Details -->
+          <div class="col-12 mt-4 mb-4">
+            <hr class="text-muted opacity-25 m-0" />
+          </div>
+
+          <form class="row g-4">
+            <div class="col-12">
+              <div class="row align-items-end">
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <label
+                    for="downloadSelect"
+                    class="form-label fw-semibold small"
+                  >
+                    Download Split TDR Details
+                  </label>
+                  <select class="form-select" id="downloadSelect">
+                    <option value="" selected disabled>--Select--</option>
+                    <option value="1">Split TDR List</option>
+                    <option value="2">Recent Split TDR</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-8 text-md-end d-grid d-md-block">
+                  <button type="button" class="btn btn-info">
+                    Download
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- TDR Split Table -->
+      <div class="card border border-light shadow-sm mt-4 rounded-2">
+        <div class="card-body p-3">
+          <div class="table-responsive rounded bg-white">
+            <table
+              id="tdrSplitTable"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Merchant</th>
+                  <th class="text-nowrap">Sub Merchant</th>
+                  <th class="text-nowrap">Currency</th>
+                  <th class="text-nowrap">Bank TID</th>
+                  <th class="text-nowrap">Payment Option</th>
+                  <th class="text-nowrap">Brand Type</th>
+                  <th class="text-nowrap">Bank Name</th>
+                  <th class="text-nowrap">Amount Range</th>
+                  <th class="text-nowrap">QPay TDR</th>
+                  <th class="text-nowrap">QPay TDR Unit</th>
+                  <th class="text-nowrap">Bank TDR</th>
+                  <th class="text-nowrap">Bank TDR Unit</th>
+                  <th class="text-nowrap">From Date</th>
+                  <th class="text-nowrap">Status</th>
+                  <th class="text-nowrap">Invoice Type</th>
+                  <th class="text-nowrap">Account ID</th>
+                  <th class="text-nowrap">Submerchant ID</th>
+                </tr>
+              </thead>
+              <tbody class="text-start" style="font-size: 0.8rem">
+                <tr>
+                  <td class="py-2 px-3 text-muted">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="javascript:void(0)"
+                      class="text-decoration-none text-primary fw-medium"
+                      title="Edit"
+                      >Edit</a
+                    >
+                  </td>
+                  <td class="py-2 px-3 fw-medium text-dark">Merchant A</td>
+                  <td class="py-2 px-3">Sub Merchant 1</td>
+                  <td class="py-2 px-3">INR</td>
+                  <td class="py-2 px-3">TID123</td>
+                  <td class="py-2 px-3">CC</td>
+                  <td class="py-2 px-3">Visa</td>
+                  <td class="py-2 px-3">Test Bank</td>
+                  <td class="py-2 px-3">&lt;=2000</td>
+                  <td class="py-2 px-3">1.5</td>
+                  <td class="py-2 px-3">%</td>
+                  <td class="py-2 px-3">1.0</td>
+                  <td class="py-2 px-3">%</td>
+                  <td class="py-2 px-3">2026-01-01</td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                  <td class="py-2 px-3">Monthly</td>
+                  <td class="py-2 px-3">ACC123</td>
+                  <td class="py-2 px-3">SM123</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="button" class="btn btn-success">
+          Show Deactive Record(s)
+        </button>
+      </div>
+
+      <div class="card border border-light shadow-sm mt-4 rounded-2">
+        <div class="card-body p-3">
+          <div class="table-responsive rounded bg-white">
+            <table
+              id="tdrSplitTable2"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Merchant</th>
+                  <th class="text-nowrap">Sub Merchant</th>
+                  <th class="text-nowrap">Currency</th>
+                  <th class="text-nowrap">Bank TID</th>
+                  <th class="text-nowrap">Payment Option</th>
+                  <th class="text-nowrap">Brand Type</th>
+                  <th class="text-nowrap">Bank Name</th>
+                  <th class="text-nowrap">Invoice Type</th>
+                  <th class="text-nowrap">QPay TDR</th>
+                  <th class="text-nowrap">QPay TDR Unit</th>
+                  <th class="text-nowrap">Bank TDR</th>
+                  <th class="text-nowrap">Bank TDR Unit</th>
+                  <th class="text-nowrap">From Date</th>
+                  <th class="text-nowrap">To Date</th>
+                  <th class="text-nowrap">Status</th>
+                  <th class="text-nowrap">Account ID</th>
+                  <th class="text-nowrap">Submerchant ID</th>
+                </tr>
+              </thead>
+              <tbody class="text-start" style="font-size: 0.8rem">
+                <tr>
+                  <td class="py-2 px-3 text-muted">1</td>
+                  <td class="py-2 px-3 fw-medium text-dark">Merchant A</td>
+                  <td class="py-2 px-3">Sub Merchant 1</td>
+                  <td class="py-2 px-3">INR</td>
+                  <td class="py-2 px-3">TID123</td>
+                  <td class="py-2 px-3">CC</td>
+                  <td class="py-2 px-3">Visa</td>
+                  <td class="py-2 px-3">Test Bank</td>
+                  <td class="py-2 px-3">Monthly</td>
+                  <td class="py-2 px-3">1.5</td>
+                  <td class="py-2 px-3">%</td>
+                  <td class="py-2 px-3">1.0</td>
+                  <td class="py-2 px-3">%</td>
+                  <td class="py-2 px-3">2026-01-01</td>
+                  <td class="py-2 px-3">2026-12-31</td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                  <td class="py-2 px-3">ACC123</td>
+                  <td class="py-2 px-3">SM123</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#tdrSplitTable")) {
+          $("#tdrSplitTable").DataTable().destroy();
+        }
+        $("#tdrSplitTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+
+        if ($.fn.DataTable.isDataTable("#tdrSplitTable2")) {
+          $("#tdrSplitTable2").DataTable().destroy();
+        }
+        $("#tdrSplitTable2").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

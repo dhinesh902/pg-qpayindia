@@ -1,140 +1,172 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Currency</title>
-</head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">Currency</h5>
 
-<body>
-  <div>
-    <h5 class="fw-bold mb-4">Currency</h5>
-
-    <div class="card shadow-sm border mb-4" style="border-color: #c3e6cb !important">
-      <div class="card-header py-3" style="background-color: #f0f9f3; border-bottom: 1px solid #c3e6cb">
-        <h6 class="fw-bold mb-1" style="color: #1f753a">
-          Currency Management
-        </h6>
-        <small class="text-muted">
-          You are here : Master > <strong class="text-dark">Currency</strong>
-        </small>
+      <div
+        class="card shadow-sm border mb-4"
+        style="border-color: #c3e6cb !important"
+      >
+        <div
+          class="card-header py-3"
+          style="background-color: #f0f9f3; border-bottom: 1px solid #c3e6cb"
+        >
+          <h6 class="fw-bold mb-1" style="color: #1f753a">
+            Currency Management
+          </h6>
+          <small class="text-muted">
+            You are here : Master > <strong class="text-dark">Currency</strong>
+          </small>
+        </div>
+        <div class="card-body p-4" style="background-color: #f9fcf9">
+          <p class="text-muted mb-0">
+            The details of currencies used in transactions can be added and
+            edited.
+          </p>
+        </div>
       </div>
-      <div class="card-body p-4" style="background-color: #f9fcf9">
-        <p class="text-muted mb-0">
-          The details of currencies used in transactions can be added and
-          edited.
-        </p>
+
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <div class="col-12 col-md-4">
+                  <label for="oldPassword" class="form-label fw-semibold small">
+                    Currency Code
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="oldPassword"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="newPassword" class="form-label fw-semibold small">
+                    Currency Name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="newPassword"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label
+                    for="currencyStatus"
+                    class="form-label fw-semibold small"
+                  >
+                    Status
+                  </label>
+                  <select class="form-select" id="currencyStatus" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">DeActive</option>
+                  </select>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary me-2">
+                    Submit
+                  </button>
+                  <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Form Section -->
-    <div class="card border-0 shadow-sm">
-      <div class="card-body p-4">
-        <div class="row">
-          <div class="col-12">
-            <form class="row g-3">
-              <div class="col-12 col-md-4">
-                <label for="oldPassword" class="form-label fw-semibold small">
-                  Currency Code
-                </label>
-                <input type="text" class="form-control" id="oldPassword" required />
-              </div>
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="currencyTable"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">SI.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Currency Code</th>
+                  <th class="text-nowrap">Currency Name</th>
+                  <th class="text-nowrap">Status</th>
+                </tr>
+              </thead>
 
-              <div class="col-12 col-md-4">
-                <label for="newPassword" class="form-label fw-semibold small">
-                  Currency Name
-                </label>
-                <input type="text" class="form-control" id="newPassword" required />
-              </div>
-
-              <div class="col-12 col-md-4">
-                <label for="currencyStatus" class="form-label fw-semibold small">
-                  Status
-                </label>
-                <select class="form-select" id="currencyStatus" required>
-                  <option value="" disabled selected>Select Status</option>
-                  <option value="active">Active</option>
-                  <option value="inactive">DeActive</option>
-                </select>
-              </div>
-
-              <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-primary me-2">
-                  Submit
-                </button>
-                <button type="reset" class="btn btn-warning">Reset</button>
-              </div>
-            </form>
+              <tbody id="currencyTableBody" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="#"
+                      class="me-3"
+                      style="
+                        text-decoration: none;
+                        color: #0d6efd;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </a>
+                    <a
+                      href="#"
+                      style="
+                        text-decoration: none;
+                        color: #fd0d0d;
+                        cursor: pointer;
+                      "
+                    >
+                      Delete
+                    </a>
+                  </td>
+                  <td class="py-2 px-3">INR</td>
+                  <td class="py-2 px-3">Indian Rupee</td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="card border-0 shadow-sm mt-4">
-      <div class="card-body">
-        <!-- Table -->
-        <div class="table-responsive rounded-3 shadow-sm bg-white">
-          <table id="currencyTable" class="table table-bordered table-hover align-middle text-center mb-0" style="width:100%" style="width: 100%;">
-            <thead>
-              <tr class="text-uppercase">
-                <th class="py-2 px-3 border-0 text-nowrap">SI.No</th>
-                <th class="py-2 px-3 border-0 text-nowrap">Action</th>
-                <th class="py-2 px-3 border-0 text-nowrap">Currency Code</th>
-                <th class="py-2 px-3 border-0 text-nowrap">Currency Name</th>
-                <th class="py-2 px-3 border-0 text-nowrap">Status</th>
-              </tr>
-            </thead>
-
-            <tbody id="currencyTableBody">
-              <tr>
-                <td class="py-2 px-3">1</td>
-                <td class="py-2 px-3">
-                  <a href="#" class="me-3" style="
-                        text-decoration: none;
-                        color: #0d6efd;
-                        cursor: pointer;
-                      ">
-                    Edit
-                  </a>
-                  <a href="#" style="
-                        text-decoration: none;
-                        color: #fd0d0d;
-                        cursor: pointer;
-                      ">
-                    Delete
-                  </a>
-                </td>
-                <td class="py-2 px-3">INR</td>
-                <td class="py-2 px-3">Indian Rupee</td>
-                <td class="py-2 px-3" style="font-weight: 500; color: #16a34a">
-                  Active
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
+    <script>
       $(document).ready(function () {
-        if ($.fn.DataTable.isDataTable('#currencyTable')) {
-          $('#currencyTable').DataTable().destroy();
+        if ($.fn.DataTable.isDataTable("#currencyTable")) {
+          $("#currencyTable").DataTable().destroy();
         }
-        $('#currencyTable').DataTable({
+        $("#currencyTable").DataTable({
           scrollX: true,
           language: {
             search: "Search:",
             lengthMenu: "Show _MENU_ entries",
           },
-          dom: "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
             "<'row'<'col-sm-12'tr>>" +
             "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         });
       });
     </script>
-</body>
-
+  </body>
 </html>

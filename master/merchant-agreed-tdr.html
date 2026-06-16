@@ -1,1 +1,328 @@
-<div class="p-4"><h3>Merchant Agreed Tdr</h3><p>This is the Merchant Agreed Tdr page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchant Agreed TDR</title>
+  </head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">Merchant Agreed TDR</h5>
+      <div class="card border border-light shadow-sm mb-4 rounded-2">
+        <div class="card-body p-4">
+          <form class="row g-4">
+            <!-- Merchant Select -->
+            <div class="col-12">
+              <div class="row align-items-end">
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <label
+                    for="merchantSelect"
+                    class="form-label fw-semibold small"
+                  >
+                    Merchant
+                  </label>
+                  <select class="form-select" id="merchantSelect" required>
+                    <option value="" selected disabled>--Select--</option>
+                    <option value="1">Merchant A</option>
+                    <option value="2">Merchant B</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <label
+                    for="paymentSelect"
+                    class="form-label fw-semibold small"
+                  >
+                    Payment Option
+                  </label>
+                  <select class="form-select" id="paymentSelect" required>
+                    <option value="" selected disabled>--Select--</option>
+                    <option value="1">Debit Card</option>
+                    <option value="2">Credit Card</option>
+                  </select>
+                </div>
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <label
+                    for="currencySelect"
+                    class="form-label fw-semibold small"
+                  >
+                    Currency
+                  </label>
+                  <select class="form-select" id="currencySelect" required>
+                    <option value="1">INR</option>
+                    <option value="2">USD</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Agreed TDR</label>
+              <input type="text" class="form-control" />
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">TDR Rate in</label>
+              <div class="d-flex flex-wrap gap-4 mt-1">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="tdrRatePct"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="tdrRatePct"
+                    >%</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="tdrRateFlat"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="tdrRateFlat"
+                    >Flat</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Amount Range</label>
+              <div class="d-flex flex-wrap gap-4 mt-1">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rangeLe2000"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="rangeLe2000"
+                    >&lt;=2000</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rangeGt2000"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="rangeGt2000"
+                    >&gt;2000</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="col-12 col-md-4 d-flex align-items-end pb-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="terminal" />
+                <label class="form-check-label small fw-semibold" for="terminal"
+                  >Terminal</label
+                >
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Status</label>
+              <div class="d-flex flex-wrap gap-4 mt-1">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="statusActive"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="statusActive"
+                    >Active</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="statusDeactive"
+                  />
+                  <label
+                    class="form-check-label small fw-medium"
+                    for="statusDeactive"
+                    >Deactive</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mt-4 d-flex gap-2">
+              <button type="submit" class="btn btn-primary px-4">Add</button>
+              <button type="button" class="btn btn-warning text-dark px-4">
+                Cancel
+              </button>
+              <button type="button" class="btn btn-info">Download</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="fw-bold mb-0 text-dark">Merchant Agreed TDR</h6>
+        </div>
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="merchantAgreeTDR"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Merchant Name</th>
+                  <th class="text-nowrap">Submerchant</th>
+                  <th class="text-nowrap">Payment Mode</th>
+                  <th class="text-nowrap">Brand / Bank</th>
+                  <th class="text-nowrap">Currency</th>
+                  <th class="text-nowrap">Agree TDR</th>
+                  <th class="text-nowrap">TDR Type</th>
+                  <th class="text-nowrap">Amount Range</th>
+                  <th class="text-nowrap">Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="merchantAgreeTDRBody" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="#"
+                      class="me-3"
+                      style="
+                        text-decoration: none;
+                        color: #0d6efd;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </a>
+                  </td>
+                  <td class="py-2 px-3">Orange Retail</td>
+                  <td class="py-2 px-3">Orange Retail</td>
+                  <td class="py-2 px-3">Net Banking</td>
+                  <td class="py-2 px-3">All banks</td>
+                  <td class="py-2 px-3">INR</td>
+                  <td class="py-2 px-3">22.00</td>
+                  <td class="py-2 px-3">Flat</td>
+                  <td class="py-2 px-3">>2000</td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="fw-bold mb-0 text-dark">Deactive Records</h6>
+        </div>
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="merchantAgreeTDR2"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Merchant Name</th>
+                  <th class="text-nowrap">Submerchant</th>
+                  <th class="text-nowrap">Payment Mode</th>
+                  <th class="text-nowrap">Brand / Bank</th>
+                  <th class="text-nowrap">Currency</th>
+                  <th class="text-nowrap">Agree TDR</th>
+                  <th class="text-nowrap">TDR Type</th>
+                  <th class="text-nowrap">Terminal</th>
+                  <th class="text-nowrap">Amount Range</th>
+                  <th class="text-nowrap">Active From</th>
+                  <th class="text-nowrap">Active To</th>
+                </tr>
+              </thead>
+
+              <tbody id="merchantAgreeTDR2Body" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">Orange Retail</td>
+                  <td class="py-2 px-3">Orange Retail</td>
+                  <td class="py-2 px-3">Net Banking</td>
+                  <td class="py-2 px-3">All banks</td>
+                  <td class="py-2 px-3">INR</td>
+                  <td class="py-2 px-3">22.00</td>
+                  <td class="py-2 px-3">Flat</td>
+                  <td class="py-2 px-3">Y</td>
+                  <td class="py-2 px-3">>2000</td>
+                  <td class="py-2 px-3">23/08/2021 03:23:37</td>
+                  <td class="py-2 px-3">23/08/2021 03:23:37</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#merchantAgreeTDR")) {
+          $("#merchantAgreeTDR").DataTable().destroy();
+        }
+        $("#merchantAgreeTDR").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+
+        if ($.fn.DataTable.isDataTable("#merchantAgreeTDR2")) {
+          $("#merchantAgreeTDR").DataTable().destroy();
+        }
+        $("#merchantAgreeTDR2").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>
