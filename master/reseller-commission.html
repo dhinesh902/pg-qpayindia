@@ -1,1 +1,264 @@
-<div class="p-4"><h3>Reseller Commission</h3><p>This is the Reseller Commission page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reseller Commission Master</title>
+  </head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">Reseller Commission Master</h5>
+
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-4">
+                <!-- row 1 -->
+                <div class="col-12 col-md-4">
+                  <label class="form-label fw-semibold small"
+                    >Reseller Name <strong class="text-danger">*</strong></label
+                  >
+                  <select class="form-select" required>
+                    <option value="" disabled selected>--Select--</option>
+                    <option value="credit">BhoomiReseller</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-4 offset-md-4">
+                  <label class="form-label fw-semibold small"
+                    >Payment Type <strong class="text-danger">*</strong></label
+                  >
+                  <select class="form-select" required>
+                    <option value="" disabled selected>--Select--</option>
+                    <option value="credit">Credit Card</option>
+                  </select>
+                </div>
+
+                <!-- row 2: Amount Range -->
+                <div class="col-12 mt-3 mb-0">
+                  <label class="form-label fw-bold small text-primary"
+                    >Amount Range</label
+                  >
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label class="form-label fw-semibold small"
+                    >From <strong class="text-danger">*</strong></label
+                  >
+                  <input type="text" class="form-control" required />
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label class="form-label fw-semibold small"
+                    >To <strong class="text-danger">*</strong></label
+                  >
+                  <input type="text" class="form-control" required />
+                </div>
+
+                <!-- row 3 -->
+                <div class="col-12 col-md-4 mt-4">
+                  <label class="form-label fw-semibold small"
+                    >Reseller Commission Rate
+                    <strong class="text-danger">*</strong></label
+                  >
+                  <input type="text" class="form-control" required />
+                </div>
+
+                <div class="col-12 col-md-4 mt-4">
+                  <label class="form-label fw-semibold small"
+                    ><strong class="text-danger">*</strong></label
+                  >
+                  <div class="d-flex flex-column gap-2 mt-1">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="pct"
+                      />
+                      <label class="form-check-label small fw-medium" for="pct"
+                        >Percentage</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="flat"
+                      />
+                      <label class="form-check-label small fw-medium" for="flat"
+                        >Flat Rate</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4 mt-4">
+                  <label class="form-label fw-semibold small"
+                    >Status <strong class="text-danger">*</strong></label
+                  >
+                  <div class="d-flex flex-column gap-2 mt-1">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="statusActive"
+                      />
+                      <label
+                        class="form-check-label small fw-medium"
+                        for="statusActive"
+                        >Active</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="statusDeactive"
+                      />
+                      <label
+                        class="form-check-label small fw-medium"
+                        for="statusDeactive"
+                        >Deactive</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-4 d-flex gap-2">
+                  <button type="submit" class="btn btn-primary me-2">
+                    Submit
+                  </button>
+                  <button type="reset" class="btn btn-warning">Cancel</button>
+                </div>
+              </form>
+
+              <!-- Download Section -->
+              <div class="col-12 mt-5 mb-4">
+                <hr class="text-muted opacity-25 m-0" />
+              </div>
+
+              <form class="row g-4">
+                <div class="col-12 col-md-4">
+                  <label class="form-label fw-semibold small"
+                    >Download Commission Details
+                    <strong class="text-danger">*</strong></label
+                  >
+                  <select class="form-select" required>
+                    <option value="" disabled selected>--Select--</option>
+                  </select>
+                </div>
+                <div class="col-12 mt-4">
+                  <div class="col-12 mt-4">
+                    <div
+                      class="horizontal-scroll d-flex gap-2 flex-nowrap pb-2"
+                    >
+                      <button type="button" class="btn btn-info flex-shrink-0">
+                        Download
+                      </button>
+
+                      <button type="button" class="btn btn-primary me-2">
+                        Show Active Record(s)
+                      </button>
+
+                      <button type="button" class="btn btn-primary me-2">
+                        Show Deactive Record(s)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="resellerCommissionTable"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Reseller</th>
+                  <th class="text-nowrap">Merchant</th>
+                  <th class="text-nowrap">Payment Option</th>
+                  <th class="text-nowrap">Brand</th>
+                  <th class="text-nowrap">Amount From</th>
+                  <th class="text-nowrap">Amount To</th>
+                  <th class="text-nowrap">Reseller CommissionRate</th>
+                  <th class="text-nowrap">Commission Type</th>
+                  <th class="text-nowrap">From Date</th>
+                  <th class="text-nowrap">To Date</th>
+                  <th class="text-nowrap">Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="resellerCommissionTableBody" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="#"
+                      class="me-3"
+                      style="
+                        text-decoration: none;
+                        color: #0d6efd;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </a>
+                  </td>
+                  <td class="py-2 px-3">Srihari</td>
+                  <td class="py-2 px-3">ALL</td>
+                  <td class="py-2 px-3">Credit Card</td>
+                  <td class="py-2 px-3"></td>
+                  <td class="py-2 px-3">1.00</td>
+                  <td class="py-2 px-3">100000.00</td>
+                  <td class="py-2 px-3">55.00</td>
+                  <td class="py-2 px-3">Percentage</td>
+                  <td class="py-2 px-3">26-11-2021</td>
+                  <td class="py-2 px-3"></td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#resellerCommissionTable")) {
+          $("#resellerCommissionTable").DataTable().destroy();
+        }
+        $("#resellerCommissionTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,1 +1,170 @@
-<div class="p-4"><h3>Reseller</h3><p>This is the Reseller page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reseller Master</title>
+  </head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">Reseller Master</h5>
+
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <!-- row 1 -->
+                <div class="col-12 col-md-4">
+                  <label for="companyname" class="form-label fw-semibold small">
+                    Company Name <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="companyname"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-4">
+                  <label for="contactname" class="form-label fw-semibold small">
+                    Contact Name <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contactname"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-4">
+                  <label for="email" class="form-label fw-semibold small">
+                    Email <strong class="text-danger">*</strong>
+                  </label>
+                  <input type="text" class="form-control" id="email" required />
+                </div>
+
+                <!-- row 2 -->
+                <div class="col-12 col-md-4">
+                  <label
+                    for="mobilenumber"
+                    class="form-label fw-semibold small"
+                  >
+                    Mobile Number <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="mobilenumber"
+                    maxlength="10"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-4">
+                  <label for="address" class="form-label fw-semibold small">
+                    Address <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label fw-semibold small"
+                    >State <strong class="text-danger">*</strong></label
+                  >
+                  <select class="form-select" required>
+                    <option value="" disabled selected>--Select--</option>
+                    <option value="credit">Tamil Nadu</option>
+                  </select>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary me-2">
+                    Submit
+                  </button>
+                  <button type="reset" class="btn btn-warning">Clear</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="resellerTable"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Company Name</th>
+                  <th class="text-nowrap">Contact Name</th>
+                  <th class="text-nowrap">Email</th>
+                  <th class="text-nowrap">Mobile</th>
+                  <th class="text-nowrap">Address</th>
+                  <th class="text-nowrap">State</th>
+                </tr>
+              </thead>
+
+              <tbody id="resellerTableBody" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="#"
+                      class="me-3"
+                      style="
+                        text-decoration: none;
+                        color: #0d6efd;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </a>
+                  </td>
+                  <td class="py-2 px-3">BoomiReseller</td>
+                  <td class="py-2 px-3">Boomi</td>
+                  <td class="py-2 px-3">t_poomi@yahoo.com</td>
+                  <td class="py-2 px-3">9940620013</td>
+                  <td class="py-2 px-3">3/2, South Road</td>
+                  <td class="py-2 px-3">Tamil Nadu</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#resellerTable")) {
+          $("#resellerTable").DataTable().destroy();
+        }
+        $("#resellerTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

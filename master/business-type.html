@@ -1,1 +1,139 @@
-<div class="p-4"><h3>Business Type</h3><p>This is the Business Type page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Type</title>
+  </head>
+  <body>
+    <div>
+      <h5 class="fw-bold mb-4">Business Type</h5>
+
+      <div class="card shadow-sm border mb-4 top-card-global">
+        <div class="card-header py-3">
+          <h6 class="fw-bold mb-1">Business Type Management</h6>
+          <small class="text-muted">
+            You are here : Master >
+            <strong class="text-dark"> Business Type</strong>
+          </small>
+        </div>
+        <div class="card-body p-4">
+          <p class="text-muted mb-0">
+            Any new Business Type details can be added and edited
+          </p>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <div class="col-12 col-md-4">
+                  <label
+                    for="businesstype"
+                    class="form-label fw-semibold small"
+                  >
+                    Business Type <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="businesstype"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary me-2">
+                    Submit
+                  </button>
+                  <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="card border-0 shadow-sm mt-4 rounded-2">
+        <div class="card-body">
+          <!-- Table -->
+          <div class="table-responsive bg-white">
+            <table
+              id="businessTypeTable"
+              class="table table-bordered table-hover align-middle text-center mb-0"
+              style="width: 100%"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Business Type</th>
+                  <th class="text-nowrap">Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="businessTypeTableBody" class="text-start">
+                <tr>
+                  <td class="py-2 px-3">1</td>
+                  <td class="py-2 px-3">
+                    <a
+                      href="#"
+                      class="me-3"
+                      style="
+                        text-decoration: none;
+                        color: #0d6efd;
+                        cursor: pointer;
+                      "
+                    >
+                      Edit
+                    </a>
+                    <a
+                      href="#"
+                      style="
+                        text-decoration: none;
+                        color: #fd0d0d;
+                        cursor: pointer;
+                      "
+                    >
+                      Delete
+                    </a>
+                  </td>
+                  <td class="py-2 px-3">Education</td>
+                  <td
+                    class="py-2 px-3"
+                    style="font-weight: 500; color: #16a34a"
+                  >
+                    Active
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#businessTypeTable")) {
+          $("#businessTypeTable").DataTable().destroy();
+        }
+        $("#businessTypeTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>
