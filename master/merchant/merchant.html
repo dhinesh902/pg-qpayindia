@@ -61,14 +61,14 @@
                   class="text-uppercase text-secondary"
                   style="font-size: 0.7rem; letter-spacing: 0.5px"
                 >
-                  <th class="py-2 px-3 border-0">S.No</th>
-                  <th class="py-2 px-3 border-0">Action</th>
-                  <th class="py-2 px-3 border-0">Merchant Type</th>
-                  <th class="py-2 px-3 border-0">Merchant Name</th>
-                  <th class="py-2 px-3 border-0">Contact Name</th>
-                  <th class="py-2 px-3 border-0">City</th>
-                  <th class="py-2 px-3 border-0">Status</th>
-                  <th class="py-2 px-3 border-0">Registered On</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">S.No</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Action</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Merchant Type</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Merchant Name</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Contact Name</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">City</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Status</th>
+                  <th class="py-2 px-3 border-0 text-nowrap">Registered On</th>
                 </tr>
               </thead>
 
@@ -100,13 +100,9 @@
                   <td class="py-2 px-3">QPay Merchant</td>
                   <td class="py-2 px-3">John Doe</td>
                   <td class="py-2 px-3">Chennai</td>
-                  <td class="py-2 px-3">
-                    <span
-                      class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1"
-                      style="font-size: 0.7rem"
-                      >Active</span
-                    >
-                  </td>
+                   <td class="py-2 px-3" style="font-weight: 500; color: #16a34a">
+                  Active
+                </td>
                   <td class="py-2 px-3">15-Jun-2026</td>
                 </tr>
               </tbody>
@@ -117,21 +113,19 @@
     </div>
     <script>
       $(document).ready(function () {
-        if (!$.fn.DataTable.isDataTable("#merchantTable")) {
-          $("#merchantTable").DataTable({
-            responsive: true,
-            lengthMenu: [10, 20, 50],
-            language: {
-              search: "_INPUT_",
-              searchPlaceholder: "Search merchants...",
-              lengthMenu: "Show _MENU_ entries",
-            },
-            dom:
-              '<"row align-items-center mb-3 g-2"<"col-sm-6"l><"col-sm-6 d-flex justify-content-sm-end"f>>' +
-              '<"row"<"col-12"tr>>' +
-              '<"row align-items-center mt-3"<"col-sm-6"i><"col-sm-6 d-flex justify-content-sm-end"p>>',
-          });
+        if ($.fn.DataTable.isDataTable('#merchantTable')) {
+          $('#merchantTable').DataTable().destroy();
         }
+        $('#merchantTable').DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom: "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
       });
     </script>
   </body>

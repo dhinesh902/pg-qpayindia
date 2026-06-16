@@ -304,6 +304,17 @@ header .rounded-pill i {
   border-radius: 6px;
 }
 
+/* Global Tabs Styling */
+.nav-tabs .nav-link {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  color: #278c46 !important;
+ background: linear-gradient(135deg, #f4fcf7, #dff5e8);
+}
+
 /* Global Table Styling */
 .table thead {
   background: #f8fafc;

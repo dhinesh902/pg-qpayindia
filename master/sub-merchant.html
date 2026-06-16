@@ -8,7 +8,7 @@
   <body>
     <div>
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h5 class="fw-bold mb-0">Bank - Edit</h5>
+        <h5 class="fw-bold mb-0">Sub Merchant Master</h5>
       </div>
       <div class="card border-0 shadow-sm">
         <div class="card-body p-4">
@@ -33,7 +33,7 @@
                 >Merchant Name<strong class="text-danger">*</strong></label
               >
               <select class="form-select" required>
-                <option value="" disabled selected>Select Merchant</option>
+                <option value="" disabled selected>--Select--</option>
                 <option value="1">Merchant A</option>
                 <option value="2">Merchant B</option>
               </select>
@@ -44,7 +44,7 @@
                 >Industry Type<strong class="text-danger">*</strong></label
               >
               <select class="form-select" required>
-                <option value="" disabled selected>Select Industry</option>
+                <option value="" disabled selected>--Select--</option>
                 <option value="1">Education</option>
                 <option value="2">Texttiles</option>
               </select>
@@ -84,7 +84,7 @@
             <div class="col-12 col-md-4">
               <label class="form-label fw-semibold small">State</label>
               <select class="form-select" required>
-                <option value="" disabled selected>Select State</option>
+                <option value="" disabled selected>--Select--</option>
                 <option value="credit">Tamil Nadu</option>
               </select>
             </div>
@@ -188,7 +188,7 @@
             <div class="col-12 col-md-4">
               <label class="form-label fw-semibold small">Status</label>
               <select class="form-select" required>
-                <option value="" disabled selected>Select Status</option>
+                <option value="" disabled selected>--Select--</option>
                 <option value="credit">Active</option>
                 <option value="credit">Deactive</option>
                 <option value="credit">Temprory Block</option>
@@ -216,16 +216,53 @@
 
             <div class="col-12 col-md-4">
               <label class="form-label fw-semibold small"
-                >Bank Account Number
-                <strong class="text-danger">*</strong></label
+                >Onboarding Process</label
               >
-              <input type="text" class="form-control" required />
+              <select class="form-select" required>
+                <option value="credit">In Process</option>
+                <option value="credit">Completed</option>
+              </select>
             </div>
             <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">UMRN</label>
+              <input type="text" class="form-control" />
+            </div>
+
+            <!-- Row 9 -->
+            <div class="col-12 col-md-4">
               <label class="form-label fw-semibold small"
-                >Live Date <strong class="text-danger">*</strong></label
-              >
-              <input type="text" class="form-control" required />
+                >Total device supplied
+              </label>
+              <input type="text" class="form-control" readonly />
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">mPOS Rent </label>
+              <input type="text" class="form-control" readonly />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold small">Bank mPOS Rent</label>
+              <input type="text" class="form-control" readonly />
+            </div>
+
+            <!-- Row 10 -->
+            <div class="col-12 col-md-4 d-flex align-items-end pb-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="mposAllowed" />
+                <label class="form-check-label small fw-semibold" for="mposAllowed">mPOS Allowed</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex align-items-end pb-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="eposAllowed" />
+                <label class="form-check-label small fw-semibold" for="eposAllowed">ePOS Allowed</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex align-items-end pb-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="convenienceFeeModule" />
+                <label class="form-check-label small fw-semibold" for="convenienceFeeModule">Convenience Fee Module</label>
+              </div>
             </div>
 
             <!-- Form Actions -->
@@ -238,6 +275,104 @@
           </form>
         </div>
       </div>
+
+      
+    </div>
+
+      <div class="card border-0 shadow-sm mt-4">
+        <div class="card-body p-4">
+          <div class="table-responsive">
+            <table id="subMerchantTable" class="table table-bordered table-hover align-middle text-center mb-0" style="width:100%">
+              <thead class="table-light">
+                <tr>
+                  <th class="text-nowrap">S.No</th>
+                  <th class="text-nowrap">Action</th>
+                  <th class="text-nowrap">Sub Merchant Name</th>
+                  <th class="text-nowrap">Sub Merchant ID</th>
+                  <th class="text-nowrap">Merchant Name</th>
+                  <th class="text-nowrap">Account Holder Name</th>
+                  <th class="text-nowrap">Bank Name</th>
+                  <th class="text-nowrap">IFSC Code</th>
+                  <th class="text-nowrap">Bank Account Number</th>
+                  <th class="text-nowrap">GST Number</th>
+                  <th class="text-nowrap">Commission Calculation Type</th>
+                  <th class="text-nowrap">Commission Rate</th>
+                  <th class="text-nowrap">Industry Type</th>
+                  <th class="text-nowrap">State</th>
+                  <th class="text-nowrap">LiveDate</th>
+                  <th class="text-nowrap">Average Ticket SIze</th>
+                  <th class="text-nowrap">Expected Monthly Volume</th>
+                  <th class="text-nowrap">Sector</th>
+                  <th class="text-nowrap">Status</th>
+                  <th class="text-nowrap">Posallowed</th>
+                  <th class="text-nowrap">ePosallowed</th>
+                  <th class="text-nowrap">UMRNo</th>
+                  <th class="text-nowrap">No of device supplied</th>
+                  <th class="text-nowrap">mPOSRent</th>
+                  <th class="text-nowrap">Bank mPOSRent</th>
+                  <th class="text-nowrap">Convenience Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                     <a
+                      href="javascript:void(0)"
+                      class="text-decoration-none text-primary fw-medium"
+                      title="Edit Merchant"
+                    >
+                      Edit
+                    </a>
+                  </td>
+                  <td>Test SubMerchant</td>
+                  <td>SM12345</td>
+                  <td>Test Merchant</td>
+                  <td>John Doe</td>
+                  <td>Test Bank</td>
+                  <td>TEST0001234</td>
+                  <td>1234567890</td>
+                  <td>22AAAAA0000A1Z5</td>
+                  <td>Percentage</td>
+                  <td>2%</td>
+                  <td>Education</td>
+                  <td>Tamil Nadu</td>
+                  <td>2023-01-01</td>
+                  <td>1500</td>
+                  <td>50000</td>
+                  <td>IT</td>
+                  <td><span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">Active</span></td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>UMR12345</td>
+                  <td>2</td>
+                  <td>500</td>
+                  <td>200</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function () {
+          if ($.fn.DataTable.isDataTable('#subMerchantTable')) {
+            $('#subMerchantTable').DataTable().destroy();
+          }
+          $('#subMerchantTable').DataTable({
+            scrollX: true,
+            language: {
+              search: "Search:",
+              lengthMenu: "Show _MENU_ entries",
+            },
+            dom: "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+              "<'row'<'col-sm-12'tr>>" +
+              "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+          });
+        });
+      </script>
     </div>
   </body>
 </html>

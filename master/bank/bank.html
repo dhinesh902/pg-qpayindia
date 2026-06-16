@@ -31,17 +31,17 @@
       <div class="card-body">
         <!-- Table -->
         <div class="table-responsive rounded-3 shadow-sm bg-white">
-          <table id="bankTable" class="table table-hover align-middle mb-0" style="width: 100%">
+          <table id="bankTable" class="table table-bordered table-hover align-middle text-center mb-0" style="width:100%" style="width: 100%">
             <thead>
               <tr class="text-uppercase">
-                <th class="py-2 px-3 border-0">S.No</th>
-                <th class="py-2 px-3 border-0">Action</th>
-                <th class="py-2 px-3 border-0">Bank Name</th>
-                <th class="py-2 px-3 border-0">Partner</th>
-                <th class="py-2 px-3 border-0">City</th>
-                <th class="py-2 px-3 border-0">State</th>
-                <th class="py-2 px-3 border-0">Country</th>
-                <th class="py-2 px-3 border-0">Status</th>
+                <th class="py-2 px-3 border-0 text-nowrap">S.No</th>
+                <th class="py-2 px-3 border-0 text-nowrap">Action</th>
+                <th class="py-2 px-3 border-0 text-nowrap">Bank Name</th>
+                <th class="py-2 px-3 border-0 text-nowrap">Partner</th>
+                <th class="py-2 px-3 border-0 text-nowrap">City</th>
+                <th class="py-2 px-3 border-0 text-nowrap">State</th>
+                <th class="py-2 px-3 border-0 text-nowrap">Country</th>
+                <th class="py-2 px-3 border-0 text-nowrap">Status</th>
               </tr>
             </thead>
 
@@ -74,24 +74,22 @@
   </div>
 
   <script>
-    $(document).ready(function () {
-      if (!$.fn.DataTable.isDataTable("#bankTable")) {
-        $("#bankTable").DataTable({
-          responsive: true,
-          lengthMenu: [10, 20, 30, 40, 50],
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable('#bankTable')) {
+          $('#bankTable').DataTable().destroy();
+        }
+        $('#bankTable').DataTable({
+          scrollX: true,
           language: {
-            search: "_INPUT_",
-            searchPlaceholder: "Search banks...",
+            search: "Search:",
             lengthMenu: "Show _MENU_ entries",
           },
-          dom:
-            '<"row align-items-center mb-3"<"col-md-6 mb-2 mb-md-0"l><"col-md-6 d-flex justify-content-md-end"f>>' +
-            '<"row"<"col-12"tr>>' +
-            '<"row align-items-center mt-3"<"col-md-6 mb-2 mb-md-0"i><"col-md-6"p>>',
+          dom: "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         });
-      }
-    });
-  </script>
+      });
+    </script>
 </body>
 
 </html>

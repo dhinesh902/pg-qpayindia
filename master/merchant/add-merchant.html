@@ -8,41 +8,935 @@
   <body>
     <div>
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h5 class="fw-bold mb-0">Add Merchant</h5>
-        <a href="#master/merchant" class="btn btn-outline-secondary btn-sm">
-          <i class="bi bi-arrow-left me-1"></i> Back to List
-        </a>
+        <h5 class="fw-bold mb-0">Merchant - Add</h5>
       </div>
 
-      <div class="card shadow-sm border mb-4 rounded-3">
+      <div
+        class="card shadow-sm border mb-4 rounded-3"
+        style="border-color: #c3e6cb !important"
+      >
         <div class="card-body p-4 bg-white">
-          <h6 class="fw-bold mb-4 text-dark border-bottom pb-2">
-            Merchant Details
-          </h6>
-          <form class="row g-3">
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small"
-                >Merchant Name <strong class="text-danger">*</strong></label
-              >
-              <input type="text" class="form-control" required />
+          <!-- Tabs Nav -->
+          <div
+            class="d-flex justify-content-between align-items-end border-bottom mb-4"
+          >
+            <ul
+              class="nav nav-tabs border-0 mb-0"
+              id="merchantAddTabs"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active fw-semibold small"
+                  id="general-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#general"
+                  type="button"
+                  role="tab"
+                  aria-controls="general"
+                  aria-selected="true"
+                >
+                  General Details
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link fw-semibold"
+                  id="contact-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#contact"
+                  type="button"
+                  role="tab"
+                  aria-controls="contact"
+                  aria-selected="false"
+                >
+                  Contact Details
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link fw-semibold"
+                  id="other-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#other"
+                  type="button"
+                  role="tab"
+                  aria-controls="other"
+                  aria-selected="false"
+                >
+                  Other Details
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link fw-semibold"
+                  id="account-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#account"
+                  type="button"
+                  role="tab"
+                  aria-controls="account"
+                  aria-selected="false"
+                >
+                  Account Details
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link fw-semibold"
+                  id="netbanking-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#netbanking"
+                  type="button"
+                  role="tab"
+                  aria-controls="netbanking"
+                  aria-selected="false"
+                >
+                  Net Banking List
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tabs Content -->
+          <form class="tab-content px-2" id="merchantAddTabsContent" style="height: 500px; overflow-y: auto; overflow-x: hidden;">
+            <!-- General Details Tab -->
+            <div
+              class="tab-pane fade show active"
+              id="general"
+              role="tabpanel"
+              aria-labelledby="general-tab"
+            >
+              <div class="row g-3">
+                  <div class="p-0.5"></div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Name <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Display Name <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Type <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <select class="form-select" required>
+                      <option value="" disabled selected>
+                        Select Merchant Type
+                      </option>
+                      <option value="retail">Retail</option>
+                      <option value="ecommerce">E-Commerce</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >User Name <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Market Place</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="marketPlace"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Verify Hash</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="verifyHash"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Pos Allowed</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="posAllowed"
+                    />
+                  </div>
+                </div>
+                <h6 class="fw-bold text-primary pb-2 small">
+                  Transaction Credentials
+                </h6>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >QPay User ID <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >QPay Password <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="password" class="form-control" required />
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Address 1 <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Address 2</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >City / Town <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >State <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <select class="form-select" required>
+                      <option value="" disabled selected>Select State</option>
+                      <option value="TN">Tamil Nadu</option>
+                      <option value="KA">Karnataka</option>
+                      <option value="MH">Maharashtra</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Zip <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      maxlength="6"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Phone <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >E-Mail <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Business Description
+                    <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <textarea class="form-control" rows="2" required></textarea>
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Business Type <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <select class="form-select" required>
+                      <option value="" disabled selected>
+                        Select Business Type
+                      </option>
+                      <option value="individual">Individual</option>
+                      <option value="llc">LLC</option>
+                      <option value="corporation">Corporation</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Sector</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Site URL
+                    <strong class="text-danger">*</strong></label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="url" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Logo URL
+                    <span class="text-muted">(or)</span> Upload Logo</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <div class="input-group">
+                      <input
+                        type="url"
+                        class="form-control"
+                        placeholder="Logo URL"
+                      />
+                      <span class="input-group-text bg-light text-muted"
+                        >OR</span
+                      >
+                      <input
+                        type="file"
+                        class="form-control"
+                        accept="image/*"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Customer Email Confirmation</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="custEmailConf"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Customer Message Confirmation</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="custMsgConf"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Email Confirmation</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="merchEmailConf"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Merchant Message Confirmation</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="merchMsgConf"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Show SMS Payment link option</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="smsPaymentLink"
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Convenience Fee Module</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input
+                      class="form-check-input mt-2"
+                      type="checkbox"
+                      id="convenienceFee"
+                    />
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >No of device supplied</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control bg-light" readonly />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >mPOS Rent</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control bg-light" readonly />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label
+                    class="col-12 col-md-4 form-label fw-semibold small d-block"
+                    >NACH SMS Notification</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <div class="form-check form-check-inline mt-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nachSms"
+                        id="nachSmsQpay"
+                        value="qpay"
+                        checked
+                      />
+                      <label
+                        class="form-check-label small fw-medium"
+                        for="nachSmsQpay"
+                        >QPay</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline mt-2">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nachSms"
+                        id="nachSmsMerchant"
+                        value="merchant"
+                      />
+                      <label
+                        class="form-check-label small fw-medium"
+                        for="nachSmsMerchant"
+                        >Merchant</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small"
-                >Contact Name <strong class="text-danger">*</strong></label
-              >
-              <input type="text" class="form-control" required />
+
+            <!-- Contact Details Tab -->
+            <div
+              class="tab-pane fade"
+              id="contact"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              <!-- Commercial Contact -->
+              <h6 class="fw-bold text-primary pb-2 mb-3 small">
+                Contact Details - Commercial
+              </h6>
+              <div class="row g-3 mb-4">
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >User Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Last Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Position / Responsibility</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Phone</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Mobile</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >E-Mail</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="form-control" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technical Contact -->
+              <h6 class="fw-bold text-primary pb-2 mb-3 small">
+                Contact Details - Technical
+              </h6>
+              <div class="row g-3 mb-4">
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >User Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Last Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Position / Responsibility</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Phone</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Mobile</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >E-Mail</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="form-control" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Administrative Contact -->
+              <h6 class="fw-bold text-primary pb-2 mb-3 small">
+                Contact Details - Administrative
+              </h6>
+              <div class="row g-3">
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >User Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Last Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Position / Responsibility</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Phone</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Mobile</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >E-Mail</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="form-control" />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small"
-                >City <strong class="text-danger">*</strong></label
-              >
-              <input type="text" class="form-control" required />
+
+            <!-- Other Details Tab -->
+            <div
+              class="tab-pane fade"
+              id="other"
+              role="tabpanel"
+              aria-labelledby="other-tab"
+            >
+              <div class="row g-3">
+                <div class="p-0.5"></div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Live Date</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="date" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >QPay Account Type</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <select class="form-select">
+                      <option value="" disabled selected>Select Type</option>
+                      <option value="type1">Type 1</option>
+                      <option value="type2">Type 2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Bank Account Type</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <select class="form-select">
+                      <option value="" disabled selected>
+                        Select Bank Type
+                      </option>
+                      <option value="savings">Savings</option>
+                      <option value="current">Current</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Bank Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >IFSC Code</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Bank Account Number</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Bank Account Holder Name</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >GST Number</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Additional Details</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <textarea class="form-control" rows="2"></textarea>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Service / Product details</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <textarea class="form-control" rows="2"></textarea>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Lowest ticket size (INR)</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Average ticket size (INR)</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Expected Monthly Volume</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >No. of transactions per month</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" />
+                  </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                    >Logistics partner details</label
+                  >
+                  <div class="col-12 col-md-6">
+                    <textarea class="form-control" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-12 mt-4 d-flex gap-2">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="reset" class="btn btn-warning text-dark">Reset</button>
+
+            <!-- Account Details Tab -->
+            <div
+              class="tab-pane fade"
+              id="account"
+              role="tabpanel"
+              aria-labelledby="account-tab"
+            >
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle text-center mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Select</th>
+                      <th class="text-start">Account Name</th>
+                      <th>Currency</th>
+                      <th class="text-start">Bank</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" /></td>
+                      <td class="text-start text-muted">aathiPSUPI</td>
+                      <td>INR</td>
+                      <td class="text-start text-muted">PaySharp</td>
+                    </tr>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" /></td>
+                      <td class="text-start text-muted">slscableTPCard</td>
+                      <td>INR</td>
+                      <td class="text-start text-muted">Tech Process</td>
+                    </tr>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" /></td>
+                      <td class="text-start text-muted">TRSTPManiTesting</td>
+                      <td>INR</td>
+                      <td class="text-start text-muted">Tech Process</td>
+                    </tr>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" /></td>
+                      <td class="text-start text-muted">HerecreditAGPNB</td>
+                      <td>INR</td>
+                      <td class="text-start text-muted">Aggrepay</td>
+                    </tr>
+                    <tr>
+                      <td><input class="form-check-input" type="checkbox" /></td>
+                      <td class="text-start text-muted">TERFS AGPUPI</td>
+                      <td>INR</td>
+                      <td class="text-start text-muted">Aggrepay</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+
+            <!-- Net Banking List Tab -->
+            <div
+              class="tab-pane fade"
+              id="netbanking"
+              role="tabpanel"
+              aria-labelledby="netbanking-tab"
+            >
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle text-center mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>NBListId</th>
+                      <th>Payment Code</th>
+                      <th class="text-start">Bank Name</th>
+                      <th class="text-start">M Bank Name</th>
+                      <th>
+                        <div class="d-flex justify-content-center gap-3">
+                          <span>Tech Process <input class="form-check-input ms-1" type="checkbox" /></span>
+                          <span>Cash Free <input class="form-check-input ms-1" type="checkbox" /></span>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>316</td>
+                      <td>AIRN</td>
+                      <td class="text-start text-muted">Airtel Payment Bank</td>
+                      <td class="text-start text-muted"></td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>108</td>
+                      <td>280</td>
+                      <td class="text-start text-muted">Allahabad Bank</td>
+                      <td class="text-start text-muted">Tech Process</td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>155</td>
+                      <td>3001</td>
+                      <td class="text-start text-muted">Allahabad Bank</td>
+                      <td class="text-start text-muted">Cash Free</td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>239</td>
+                      <td>ALLN</td>
+                      <td class="text-start text-muted">Allahabad Bank</td>
+                      <td class="text-start text-muted"></td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>240</td>
+                      <td>ADBN</td>
+                      <td class="text-start text-muted">Andhra Bank</td>
+                      <td class="text-start text-muted"></td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>156</td>
+                      <td>3002</td>
+                      <td class="text-start text-muted">Andhra Bank</td>
+                      <td class="text-start text-muted">Cash Free</td>
+                      <td>
+                        <div class="d-flex justify-content-center gap-5">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </form>
+          
+          <div class="mt-4 pt-3 border-top d-flex gap-2 justify-content-start">
+            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-warning text-dark">Reset</button>
+          </div>
         </div>
       </div>
     </div>
