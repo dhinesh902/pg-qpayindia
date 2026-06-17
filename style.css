@@ -481,6 +481,12 @@ footer p {
   .content {
     padding: 1rem;
   }
+
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_length label {
+    margin-bottom: 10px;
+  }
 }
 
 /* Disable animation for sidebar submenus */
