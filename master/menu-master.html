@@ -1,1 +1,174 @@
-<div class="p-4"><h3>Menu Master</h3><p>This is the Menu Master page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Master</title>
+  </head>
+  <body>
+    <div>
+
+      <!-- top card -->
+      <div class="card shadow-sm border mb-4 top-card-global">
+        <div class="card-header py-3">
+          <h6 class="fw-bold mb-1">Menu Master Management</h6>
+          <small class="text-muted">
+            You are here : Master >
+            <strong class="text-dark"> Business Type</strong>
+          </small>
+        </div>
+      </div>
+
+      <!-- form box -->
+
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <!-- Row 1 -->
+                <div class="col-12 col-md-6">
+                  <label for="menuName" class="custom-label">
+                    Menu Name <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="custom-input"
+                    id="menuName"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="moduleType" class="custom-label">
+                    Module Type <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="custom-select" id="moduleType" required>
+                    <option value="">--Select--</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">DeActive</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="parentMenu" class="custom-label">
+                    Parent Menu <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="custom-select" id="parentMenu" required>
+                    <option value="">--Select--</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">DeActive</option>
+                  </select>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-12 col-md-6">
+                  <label for="displayOrder" class="custom-label">
+                    Order of Display <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="custom-select" id="displayOrder" required>
+                    <option value="">--Select--</option>
+                    <option value="active">1</option>
+                    <option value="inactive">2</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="menuUrl" class="custom-label">
+                    URL Path <strong class="text-danger">*</strong>
+                  </label>
+                  <input
+                    type="text"
+                    class="custom-input"
+                    id="menuUrl"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="status" class="custom-label">
+                    Status <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="custom-select" id="status" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">DeActive</option>
+                  </select>
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary me-2">
+                    Submit
+                  </button>
+                  <button type="reset" class="btn btn-warning">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
+          <!-- Table -->
+          <div class="custom-table-responsive">
+            <table
+              id="menuMasterTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>MenuId</th>
+                  <th>Menu Name</th>
+                  <th>Module Type</th>
+                  <th>URL Path</th>
+                  <th>Display Order</th>
+                  <th>Parent MenuId</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="menuMasterTableBody">
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <a href="#" class="action-link edit-link"> Edit </a>
+                  </td>
+                  <td>1225</td>
+                  <td>Registration Link</td>
+                  <td>M</td>
+                  <td>wwws\merchant\nach\registrationlinkcreation.aspx</td>
+                  <td>24</td>
+                  <td>1210</td>
+                  <td class="status-active">Active</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#menuMasterTable")) {
+          $("#menuMasterTable").DataTable().destroy();
+        }
+        $("#menuMasterTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

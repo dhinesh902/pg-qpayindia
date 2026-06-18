@@ -1,1 +1,99 @@
-<div class="p-4"><h3>Download Mis</h3><p>This is the Download Mis page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settlement MIS Report</title>
+  </head>
+  <body>
+    <!-- Top card -->
+    <div class="card shadow-sm border mb-4 top-card-global">
+      <div class="card-body p-4">
+        <p class="title">
+          Customer transaction reports for a specified date range are given in
+          this page.
+        </p>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="misDate" class="custom-label">Date</label>
+            <input type="date" class="custom-input" id="misDate" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="bankoption" class="custom-label">
+              Bank <strong class="text-danger">*</strong>
+            </label>
+            <select class="custom-select" id="bankoption" required>
+              <option value="">--Select--</option>
+              <option value="yesbank">Yes Bank</option>
+            </select>
+          </div>
+
+          <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary px-4">Submit</button>
+            <button type="button" class="btn-view">View</button>
+            <button type="button" class="btn btn-info">Download</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="custom-table-card">
+      <div class="custom-table-card-body">
+        <!-- Table -->
+        <div class="custom-table-responsive" style="overflow-x: hidden">
+          <table
+            id="mprTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th><input class="custom-check-input" type="checkbox" /></th>
+                <th>MPR ID</th>
+                <th>File Name</th>
+                <th>Transaction Date</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="text-muted">1</td>
+                <td><input class="custom-check-input" type="checkbox" /></td>
+                <td>21402</td>
+                <td>Sun Software Solutions Pvt Ltd</td>
+                <td>24/03/2026</td>              
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#mprTable")) {
+          $("#mprTable").DataTable().destroy();
+        }
+        $("#mprTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          columnDefs: [{ orderable: false, targets: 1 }],
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

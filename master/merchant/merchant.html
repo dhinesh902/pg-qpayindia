@@ -7,20 +7,16 @@
   </head>
   <body>
     <div>
-      <h5 class="fw-bold mb-4">Merchant</h5>
-
       <!-- Top Card -->
       <div class="card shadow-sm border mb-4 top-card-global">
         <div class="card-header py-3">
-          <h6 class="fw-bold mb-1">
-            Merchant Management
-          </h6>
+          <h6 class="fw-bold mb-1">Merchant Management</h6>
           <small class="text-muted">
             You are here : Master > <strong class="text-dark">Merchant</strong>
           </small>
         </div>
         <div class="card-body p-4">
-          <p class="text-muted mb-0">
+          <p class="title">
             The merchant details can be added & edited. You can also search for
             a specific merchant by name & status. This page contains the
             merchant master.
@@ -31,68 +27,57 @@
       <!-- Add Button -->
       <a href="#master/add-merchant" class="btn btn-primary"> Add merchant </a>
 
-      <div class="card border border-light shadow-sm mt-4 rounded-2">
+      <div class="custom-table-card">
         <div
           class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
         >
-          <h6 class="fw-bold mb-0 text-dark">Merchant List</h6>
+          <h6 class="table-header-text">Merchant List</h6>
         </div>
-        <div class="card-body p-3">
+        <div class="custom-table-card-body">
           <!-- Table -->
-          <div class="table-responsive rounded bg-white">
+          <div class="custom-table-responsive">
             <table
               id="merchantTable"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Action</th>
-                  <th class="text-nowrap">Merchant Type</th>
-                  <th class="text-nowrap">Merchant Name</th>
-                  <th class="text-nowrap">Contact Name</th>
-                  <th class="text-nowrap">City</th>
-                  <th class="text-nowrap">Status</th>
-                  <th class="text-nowrap">Registered On</th>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>Merchant Type</th>
+                  <th>Merchant Name</th>
+                  <th>Contact Name</th>
+                  <th>City</th>
+                  <th>Status</th>
+                  <th>Registered On</th>
                 </tr>
               </thead>
 
-              <tbody class="text-start" style="font-size: 0.8rem">
+              <tbody>
                 <tr>
-                  <td class="py-2 px-3 text-muted">1</td>
-                  <td class="py-2 px-3">
+                  <td class="text-muted">1</td>
+                  <td>
                     <a
                       href="javascript:void(0)"
-                      class="text-decoration-none text-primary fw-medium"
+                      class="action-link"
                       title="Edit Merchant"
                     >
                       Edit
                     </a>
                     <a
                       href="javascript:void(0)"
-                      style="
-                        text-decoration: none;
-                        color: #fd0d0d;
-                        cursor: pointer;
-                        margin-left: 8px;
-                      "
+                      class="action-link delete-link"
                       title="Delete Merchant"
                     >
                       Delete
                     </a>
                   </td>
-                  <td class="py-2 px-3 fw-medium text-dark">Retail</td>
-                  <td class="py-2 px-3">QPay Merchant</td>
-                  <td class="py-2 px-3">John Doe</td>
-                  <td class="py-2 px-3">Chennai</td>
-                  <td
-                    class="py-2 px-3"
-                    style="font-weight: 500; color: #16a34a"
-                  >
-                    Active
-                  </td>
-                  <td class="py-2 px-3">15-Jun-2026</td>
+                  <td class="fw-medium text-dark">Retail</td>
+                  <td>QPay Merchant</td>
+                  <td>John Doe</td>
+                  <td>Chennai</td>
+                  <td class="status-active">Active</td>
+                  <td>15-Jun-2026</td>
                 </tr>
               </tbody>
             </table>

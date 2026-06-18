@@ -1,1 +1,64 @@
-<div class="p-4"><h3>Merchant Weekly Settlement</h3><p>This is the Merchant Weekly Settlement page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchant Weekly Settlement</title>
+  </head>
+  <body>
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="reportType" class="custom-label">Report Type</label>
+            <select class="custom-select" id="reportType">
+              <option value="transaction_date">Transaction Date</option>
+              <option value="settlement_date">Settlement Date</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="custom-label">Transaction Date</label>
+            <div class="d-flex align-items-center gap-2 mt-1">
+              <input
+                type="date"
+                class="custom-input"
+                placeholder="dd/mmm/yy"
+                required
+              />
+              <span class="text-muted fw-bold px-2 bg-light border rounded py-1"
+                >To</span
+              >
+              <input
+                type="date"
+                class="custom-input"
+                placeholder="dd/mmm/yy"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="merchantName" class="custom-label">Merchant Name</label>
+            <select class="custom-select" id="merchantName">
+              <option value="all">All Merchants</option>
+              <option value="m1">Merchant 1</option>
+              <option value="m2">Merchant 2</option>
+            </select>
+          </div>
+
+          <div class="col-12 mt-4 d-flex gap-2">
+            <button type="submit" class="btn btn-info px-4 shadow-sm">
+              Download
+            </button>
+            <button type="reset" class="btn btn-info px-4 shadow-sm">
+              Consolidate Report
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="note-card mb-4">No records found</div>
+  </body>
+</html>

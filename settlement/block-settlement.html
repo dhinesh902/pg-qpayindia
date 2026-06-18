@@ -1,1 +1,92 @@
-<div class="p-4"><h3>Block Settlement</h3><p>This is the Block Settlement page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions & Disputes</title>
+  </head>
+  <body>
+    
+    <div class="note-card mb-4">
+      There is no unsettled transaction available on the given MIS date
+    </div>
+
+    <!-- Form Section -->
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="misdate" class="custom-label"
+              >MIS Date <strong class="text-danger">*</strong></label
+            >
+            <input type="date" class="custom-input" id="misdate" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="bankoption" class="custom-label">
+              Bank <strong class="text-danger">*</strong>
+            </label>
+            <select class="custom-select" id="bankoption" required>
+              <option value="">--Select--</option>
+              <option value="yesbank">Yes Bank</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="custom-label"
+              >Mode <strong class="text-danger">*</strong></label
+            >
+            <div class="d-flex flex-wrap gap-4 mt-1">
+              <div class="form-check">
+                <input
+                  class="custom-check-input"
+                  type="radio"
+                  name="modeOption"
+                  id="modeAll"
+                  required
+                />
+                <label class="custom-check-label" for="modeAll"
+                  >All Transaction</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="custom-check-input"
+                  type="radio"
+                  name="modeOption"
+                  id="modeChoose"
+                />
+                <label class="custom-check-label" for="modeChoose"
+                  >Choose Transaction</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="reason" class="custom-label">Reason</label>
+            <textarea class="custom-input" id="reason" rows="1"></textarea>
+          </div>
+
+          <div class="col-12">
+            <div class="horizontal-scroll d-flex gap-2 flex-nowrap pb-2">
+              <button
+                type="button"
+                class="btn btn-primary flex-shrink-0 text-nowrap"
+              >
+                Submit
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-warning flex-shrink-0 text-nowrap"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

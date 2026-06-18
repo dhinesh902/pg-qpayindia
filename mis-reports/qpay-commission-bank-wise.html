@@ -1,1 +1,129 @@
-<div>qpay-commission-bank-wise</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qpay Commission</title>
+  </head>
+  <body>
+    <div class="card shadow-sm border mb-4 top-card-global">
+      <div class="card-header py-3">
+        <h6 class="fw-bold mb-1">QPay Commission Reports Management</h6>
+        <small class="text-muted">
+          You are here : MIS Reports >
+          <strong class="text-dark">QPay Commission Reports</strong>
+        </small>
+      </div>
+      <div class="card-body p-4">
+        <p class="title">
+          Total QPay Commission details for a specified date range for all cards
+          and Netbankings are given in this page.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-4">
+      <div class="note-card">No records to display.</div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card border-0 shadow-sm rounded-2">
+      <div class="card-body p-4">
+        <div class="row">
+          <div class="col-12">
+            <form class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="fromdate" class="custom-label"> Date From </label>
+                <input
+                  type="date"
+                  class="custom-input"
+                  id="fromdate"
+                  required
+                />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="todate" class="custom-label"> Date To </label>
+                <input type="date" class="custom-input" id="todate" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="bankselection" class="custom-label">
+                  Bank Wise
+                </label>
+                <select class="custom-select" id="bankselection" required>
+                  <option value="active">ALL</option>
+                  <option value="inactive">Merchant B</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="merchantselection" class="custom-label">
+                  Merchant Wise
+                </label>
+                <select class="custom-select" id="merchantselection" required>
+                  <option value="active">ALL</option>
+                  <option value="inactive">Merchant B</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+               <button type="submit" class="btn btn-primary me-2">
+                  Submit
+                </button>
+                <button type="reset" class="btn btn-warning me-2">Cancel</button>
+                <button type="reset" class="btn btn-info">Download Report</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Column -->
+    <div class="custom-table-card">
+      <div class="custom-table-card-body">
+        <!-- Table -->
+        <div class="custom-table-responsive">
+          <table
+            id="qpaycommissionTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th>Bank Name</th>
+                <th>Qpay Commission (INR)</th>
+              </tr>
+            </thead>
+
+            <tbody id="qpaycommissionTableBody">
+              <tr>
+                <td>1</td>
+                <td>Aggrepay</td>
+                <td>204.64</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#qpaycommissionTable")) {
+          $("#qpaycommissionTable").DataTable().destroy();
+        }
+        $("#qpaycommissionTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

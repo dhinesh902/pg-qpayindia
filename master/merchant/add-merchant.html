@@ -28,12 +28,12 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link active fw-semibold small"
-                  id="general-tab"
+                  id="add-merchant-general-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#general"
+                  data-bs-target="#add-merchant-general"
                   type="button"
                   role="tab"
-                  aria-controls="general"
+                  aria-controls="add-merchant-general"
                   aria-selected="true"
                 >
                   General Details
@@ -42,12 +42,12 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link fw-semibold"
-                  id="contact-tab"
+                  id="add-merchant-contact-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#contact"
+                  data-bs-target="#add-merchant-contact"
                   type="button"
                   role="tab"
-                  aria-controls="contact"
+                  aria-controls="add-merchant-contact"
                   aria-selected="false"
                 >
                   Contact Details
@@ -56,12 +56,12 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link fw-semibold"
-                  id="other-tab"
+                  id="add-merchant-other-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#other"
+                  data-bs-target="#add-merchant-other"
                   type="button"
                   role="tab"
-                  aria-controls="other"
+                  aria-controls="add-merchant-other"
                   aria-selected="false"
                 >
                   Other Details
@@ -70,12 +70,12 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link fw-semibold"
-                  id="account-tab"
+                  id="add-merchant-account-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#account"
+                  data-bs-target="#add-merchant-account"
                   type="button"
                   role="tab"
-                  aria-controls="account"
+                  aria-controls="add-merchant-account"
                   aria-selected="false"
                 >
                   Account Details
@@ -84,12 +84,12 @@
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link fw-semibold"
-                  id="netbanking-tab"
+                  id="add-merchant-netbanking-tab"
                   data-bs-toggle="tab"
-                  data-bs-target="#netbanking"
+                  data-bs-target="#add-merchant-netbanking"
                   type="button"
                   role="tab"
-                  aria-controls="netbanking"
+                  aria-controls="add-merchant-netbanking"
                   aria-selected="false"
                 >
                   Net Banking List
@@ -107,34 +107,34 @@
             <!-- General Details Tab -->
             <div
               class="tab-pane fade show active"
-              id="general"
+              id="add-merchant-general"
               role="tabpanel"
-              aria-labelledby="general-tab"
+              aria-labelledby="add-merchant-general-tab"
             >
               <div class="row g-3">
                 <div class="p-0.5"></div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Name <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Display Name <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Type <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <select class="form-select" required>
+                  <div class="col-12 col-md-6">
+                    <select class="custom-select" required>
                       <option value="" disabled selected>
                         Select Merchant Type
                       </option>
@@ -144,101 +144,99 @@
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >User Name <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
 
                 <!-- Checkboxes -->
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Market Place</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="marketPlace"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Verify Hash</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="verifyHash"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Pos Allowed</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="posAllowed"
                     />
                   </div>
                 </div>
-                <h6 class="fw-bold text-primary pb-2 small">
+                <h6 class="inner-title">
                   Transaction Credentials
                 </h6>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >QPay User ID <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >QPay Password <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="password" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="password" class="custom-input" required />
                   </div>
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Address 1 <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Address 2</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Address 2</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >City / Town <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >State <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <select class="form-select" required>
+                  <div class="col-12 col-md-6">
+                    <select class="custom-select" required>
                       <option value="" disabled selected>Select State</option>
                       <option value="TN">Tamil Nadu</option>
                       <option value="KA">Karnataka</option>
@@ -247,50 +245,50 @@
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Zip <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
                       type="text"
-                      class="form-control"
+                      class="custom-input"
                       maxlength="6"
                       required
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Phone <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >E-Mail <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="email" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Business Description
                     <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <textarea class="form-control" rows="2" required></textarea>
+                  <div class="col-12 col-md-6">
+                    <textarea class="custom-input" rows="2" required></textarea>
                   </div>
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Business Type <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <select class="form-select" required>
+                  <div class="col-12 col-md-6">
+                    <select class="custom-select" required>
                       <option value="" disabled selected>
                         Select Business Type
                       </option>
@@ -301,112 +299,110 @@
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Sector</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Sector</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Site URL
                     <strong class="text-danger">*</strong></label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="url" class="form-control" required />
+                  <div class="col-12 col-md-6">
+                    <input type="url" class="custom-input" required />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Logo URL
                   </label>
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
                       type="url"
-                      class="form-control"
+                      class="custom-input"
                       placeholder="Eg: www.xyz.com"
                     />
                   </div>
                 </div>
                 <span class="text-muted m-0 mb-1">(or)</span>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small">
+                  <label class="col-12 col-md-4 custom-label">
                     Upload Logo</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="file" class="form-control" accept="image/*" />
+                  <div class="col-12 col-md-6">
+                    <input type="file" class="custom-input" accept="image/*" />
                   </div>
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Customer Email Confirmation</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="custEmailConf"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Customer Message Confirmation</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="custMsgConf"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Email Confirmation</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="merchEmailConf"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Merchant Message Confirmation</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="merchMsgConf"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Show SMS Payment link option</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="smsPaymentLink"
                     />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Convenience Fee Module</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <input
-                      class="form-check-input mt-2"
+                      class="custom-check-input mt-2"
                       type="checkbox"
                       id="convenienceFee"
                     />
@@ -414,53 +410,46 @@
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >No of device supplied</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control bg-light" readonly />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input bg-light" readonly />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >mPOS Rent</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control bg-light" readonly />
+                  <label class="col-12 col-md-4 custom-label">mPOS Rent</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input bg-light" readonly />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label
-                    class="col-12 col-md-4 form-label fw-semibold small d-block"
+                  <label class="col-12 col-md-4 custom-label d-block"
                     >NACH SMS Notification</label
                   >
-                  <div class="col-12 col-md-4">
+                  <div class="col-12 col-md-6">
                     <div class="form-check form-check-inline mt-2">
                       <input
-                        class="form-check-input"
+                        class="custom-check-input"
                         type="radio"
                         name="nachSms"
                         id="nachSmsQpay"
                         value="qpay"
                         checked
                       />
-                      <label
-                        class="form-check-label small fw-medium"
-                        for="nachSmsQpay"
+                      <label class="custom-check-label" for="nachSmsQpay"
                         >QPay</label
                       >
                     </div>
                     <div class="form-check form-check-inline mt-2">
                       <input
-                        class="form-check-input"
+                        class="custom-check-input"
                         type="radio"
                         name="nachSms"
                         id="nachSmsMerchant"
                         value="merchant"
                       />
-                      <label
-                        class="form-check-label small fw-medium"
-                        for="nachSmsMerchant"
+                      <label class="custom-check-label" for="nachSmsMerchant"
                         >Merchant</label
                       >
                     </div>
@@ -472,116 +461,96 @@
             <!-- Contact Details Tab -->
             <div
               class="tab-pane fade"
-              id="contact"
+              id="add-merchant-contact"
               role="tabpanel"
-              aria-labelledby="contact-tab"
+              aria-labelledby="add-merchant-contact-tab"
             >
               <!-- Commercial Contact -->
-              <h6 class="fw-bold text-primary pb-2 mb-3 small">
+              <h6 class="inner-title">
                 Contact Details - Commercial
               </h6>
               <div class="row g-3 mb-4">
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >User Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">User Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Last Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Last Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Position / Responsibility</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Phone</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Phone</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Mobile</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Mobile</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >E-Mail</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="email" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">E-Mail</label>
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="custom-input" />
                   </div>
                 </div>
               </div>
 
               <!-- Technical Contact -->
-              <h6 class="fw-bold text-primary pb-2 mb-3 small">
+              <h6 class="inner-title">
                 Contact Details - Technical
               </h6>
               <div class="row g-3 mb-4">
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >User Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">User Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Last Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Last Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Position / Responsibility</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Phone</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Phone</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Mobile</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Mobile</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >E-Mail</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="email" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">E-Mail</label>
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="custom-input" />
                   </div>
                 </div>
               </div>
@@ -592,51 +561,41 @@
               </h6>
               <div class="row g-3">
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >User Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">User Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Last Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Last Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Position / Responsibility</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Phone</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Phone</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Mobile</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="tel" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Mobile</label>
+                  <div class="col-12 col-md-6">
+                    <input type="tel" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >E-Mail</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="email" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">E-Mail</label>
+                  <div class="col-12 col-md-6">
+                    <input type="email" class="custom-input" />
                   </div>
                 </div>
               </div>
@@ -645,26 +604,24 @@
             <!-- Other Details Tab -->
             <div
               class="tab-pane fade"
-              id="other"
+              id="add-merchant-other"
               role="tabpanel"
-              aria-labelledby="other-tab"
+              aria-labelledby="add-merchant-other-tab"
             >
               <div class="row g-3">
                 <div class="p-0.5"></div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Live Date</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="date" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Live Date</label>
+                  <div class="col-12 col-md-6">
+                    <input type="date" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >QPay Account Type</label
                   >
-                  <div class="col-12 col-md-4">
-                    <select class="form-select">
+                  <div class="col-12 col-md-6">
+                    <select class="custom-select">
                       <option value="" disabled selected>Select Type</option>
                       <option value="type1">Type 1</option>
                       <option value="type2">Type 2</option>
@@ -672,11 +629,11 @@
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Bank Account Type</label
                   >
-                  <div class="col-12 col-md-4">
-                    <select class="form-select">
+                  <div class="col-12 col-md-6">
+                    <select class="custom-select">
                       <option value="" disabled selected>
                         Select Bank Type
                       </option>
@@ -686,100 +643,94 @@
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >Bank Name</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">Bank Name</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >IFSC Code</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">IFSC Code</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Bank Account Number</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Bank Account Holder Name</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
-                    >GST Number</label
-                  >
-                  <div class="col-12 col-md-4">
-                    <input type="text" class="form-control" />
+                  <label class="col-12 col-md-4 custom-label">GST Number</label>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="custom-input" />
                   </div>
                 </div>
 
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Additional Details</label
                   >
-                  <div class="col-12 col-md-4">
-                    <textarea class="form-control" rows="2"></textarea>
+                  <div class="col-12 col-md-6">
+                    <textarea class="custom-input" rows="2"></textarea>
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Service / Product details</label
                   >
-                  <div class="col-12 col-md-4">
-                    <textarea class="form-control" rows="2"></textarea>
+                  <div class="col-12 col-md-6">
+                    <textarea class="custom-input" rows="2"></textarea>
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Lowest ticket size (INR)</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="number" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Average ticket size (INR)</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="number" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Expected Monthly Volume</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="number" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >No. of transactions per month</label
                   >
-                  <div class="col-12 col-md-4">
-                    <input type="number" class="form-control" />
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="custom-input" />
                   </div>
                 </div>
                 <div class="row align-items-center mb-3">
-                  <label class="col-12 col-md-4 form-label fw-semibold small"
+                  <label class="col-12 col-md-4 custom-label"
                     >Logistics partner details</label
                   >
-                  <div class="col-12 col-md-4">
-                    <textarea class="form-control" rows="2"></textarea>
+                  <div class="col-12 col-md-6">
+                    <textarea class="custom-input" rows="2"></textarea>
                   </div>
                 </div>
               </div>
@@ -788,26 +739,27 @@
             <!-- Account Details Tab -->
             <div
               class="tab-pane fade"
-              id="account"
+              id="add-merchant-account"
               role="tabpanel"
-              aria-labelledby="account-tab"
+              aria-labelledby="add-merchant-account-tab"
             >
-              <div class="table-responsive">
+              <h6 class="inner-title">Accounts for Adding</h6>
+              <div class="custom-table-responsive">
                 <table
-                  class="table table-bordered table-hover align-middle text-center mb-0"
+                  class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
                 >
-                  <thead class="table-light">
+                  <thead class="custom-table-light">
                     <tr>
                       <th>Select</th>
-                      <th class="text-start">Account Name</th>
+                      <th>Account Name</th>
                       <th>Currency</th>
-                      <th class="text-start">Bank</th>
+                      <th>Bank</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="custom-check-input" type="checkbox" />
                       </td>
                       <td class="text-start text-muted">aathiPSUPI</td>
                       <td>INR</td>
@@ -815,7 +767,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="custom-check-input" type="checkbox" />
                       </td>
                       <td class="text-start text-muted">slscableTPCard</td>
                       <td>INR</td>
@@ -823,7 +775,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="custom-check-input" type="checkbox" />
                       </td>
                       <td class="text-start text-muted">TRSTPManiTesting</td>
                       <td>INR</td>
@@ -831,7 +783,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="custom-check-input" type="checkbox" />
                       </td>
                       <td class="text-start text-muted">HerecreditAGPNB</td>
                       <td>INR</td>
@@ -839,7 +791,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="custom-check-input" type="checkbox" />
                       </td>
                       <td class="text-start text-muted">TERFS AGPUPI</td>
                       <td>INR</td>
@@ -853,32 +805,32 @@
             <!-- Net Banking List Tab -->
             <div
               class="tab-pane fade"
-              id="netbanking"
+              id="add-merchant-netbanking"
               role="tabpanel"
-              aria-labelledby="netbanking-tab"
+              aria-labelledby="add-merchant-netbanking-tab"
             >
-              <div class="table-responsive">
+              <div class="custom-table-responsive">
                 <table
-                  class="table table-bordered table-hover align-middle text-center mb-0"
+                  class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
                 >
-                  <thead class="table-light">
+                  <thead class="custom-table-light">
                     <tr>
                       <th>NBListId</th>
                       <th>Payment Code</th>
-                      <th class="text-start">Bank Name</th>
-                      <th class="text-start">M Bank Name</th>
+                      <th>Bank Name</th>
+                      <th>M Bank Name</th>
                       <th>
                         <div class="d-flex justify-content-center gap-3">
                           <span
                             >Tech Process
                             <input
-                              class="form-check-input ms-1"
+                              class="custom-check-input ms-1"
                               type="checkbox"
                           /></span>
                           <span
                             >Cash Free
                             <input
-                              class="form-check-input ms-1"
+                              class="custom-check-input ms-1"
                               type="checkbox"
                           /></span>
                         </div>
@@ -893,7 +845,7 @@
                       <td class="text-start text-muted"></td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>
@@ -904,7 +856,7 @@
                       <td class="text-start text-muted">Tech Process</td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>
@@ -915,7 +867,7 @@
                       <td class="text-start text-muted">Cash Free</td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>
@@ -926,7 +878,7 @@
                       <td class="text-start text-muted"></td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>
@@ -937,7 +889,7 @@
                       <td class="text-start text-muted"></td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>
@@ -948,7 +900,7 @@
                       <td class="text-start text-muted">Cash Free</td>
                       <td>
                         <div class="d-flex justify-content-center gap-5">
-                          <input class="form-check-input" type="checkbox" />
+                          <input class="custom-check-input" type="checkbox" />
                         </div>
                       </td>
                     </tr>

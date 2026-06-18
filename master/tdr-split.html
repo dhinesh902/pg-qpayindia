@@ -7,7 +7,6 @@
   </head>
   <body>
     <div>
-      <h5 class="fw-bold mb-4">TDR Split</h5>
 
       <!-- Combined Main Card -->
       <div class="card border border-light shadow-sm mb-4 rounded-2">
@@ -16,20 +15,20 @@
             <!-- Merchant Select -->
             <div class="col-12">
               <div class="row align-items-end">
-                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
                   <label
                     for="merchantSelect"
-                    class="form-label fw-semibold small"
+                    class="custom-label"
                   >
                     Merchant <strong class="text-danger">*</strong>
                   </label>
-                  <select class="form-select" id="merchantSelect" required>
+                  <select class="custom-select" id="merchantSelect" required>
                     <option value="" selected disabled>--Select--</option>
                     <option value="1">Merchant A</option>
                     <option value="2">Merchant B</option>
                   </select>
                 </div>
-                <div class="col-12 col-md-8 text-md-end d-grid d-md-block">
+                <div class="col-12 col-md-6 text-md-end">
                   <button type="submit" class="btn btn-primary">
                     Get Split TDR
                   </button>
@@ -44,35 +43,35 @@
           </div>
           <form class="row g-4">
             <!-- Row 1 -->
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Currency</label>
-              <select class="form-select">
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Currency</label>
+              <select class="custom-select">
                 <option value="" selected disabled>--Select--</option>
                 <option value="INR">INR</option>
                 <option value="USD">USD</option>
               </select>
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small"
+            <div class="col-12 col-md-6">
+              <label class="custom-label"
                 >Transaction Type</label
               >
-              <select class="form-select">
+              <select class="custom-select">
                 <option value="" selected disabled>--Select--</option>
                 <option value="sale">Sale</option>
                 <option value="refund">Refund</option>
               </select>
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Bank TID</label>
-              <select class="form-select">
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Bank TID</label>
+              <select class="custom-select">
                 <option value="" selected disabled>--Select--</option>
                 <option value="tid1">TID 1</option>
                 <option value="tid2">TID 2</option>
               </select>
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Payment Option</label>
-              <select class="form-select">
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Payment Option</label>
+              <select class="custom-select">
                 <option value="" selected disabled>--Select--</option>
                 <option value="cc">Credit Card</option>
                 <option value="dc">Debit Card</option>
@@ -80,69 +79,69 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Amount Range</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Amount Range</label>
               <div class="d-flex flex-wrap gap-4 mt-1">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="rangeLe2000"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="rangeLe2000"
                     >&lt;=2000</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="rangeGt2000"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="rangeGt2000"
                     >&gt;2000</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="rangeAny"
                   />
-                  <label class="form-check-label small fw-medium" for="rangeAny"
+                  <label class="custom-check-label" for="rangeAny"
                     >Any Amount</label
                   >
                 </div>
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Status</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Status</label>
               <div class="d-flex flex-wrap gap-4 mt-1">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="statusActive"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="statusActive"
                     >Active</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="statusDeactive"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="statusDeactive"
                     >Deactive</label
                   >
@@ -151,38 +150,37 @@
             </div>
 
             <!-- Row 3 -->
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">QPay TDR</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">QPay TDR</label>
               <input
                 type="text"
-                class="form-control"
-                style="background: #f5f5f5;"
+                class="custom-input"
                 readonly
               />
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">QPay TDR Unit</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">QPay TDR Unit</label>
               <div class="d-flex flex-wrap gap-4 mt-2">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="qpayUnitPct"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="qpayUnitPct"
                     >%</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="qpayUnitFlat"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="qpayUnitFlat"
                     >Flat Rate</label
                   >
@@ -191,38 +189,37 @@
             </div>
 
             <!-- Row 4 -->
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Bank TDR</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Bank TDR</label>
               <input
                 type="text"
-                class="form-control"
+                class="custom-input"
                 readonly
-                style="background: #f5f5f5"
               />
             </div>
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Bank TDR Unit</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Bank TDR Unit</label>
               <div class="d-flex flex-wrap gap-4 mt-2">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="bankUnitPct"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="bankUnitPct"
                     >%</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="bankUnitFlat"
                   />
                   <label
-                    class="form-check-label small fw-medium"
+                    class="custom-check-label"
                     for="bankUnitFlat"
                     >Flat Rate</label
                   >
@@ -247,23 +244,21 @@
           <form class="row g-4">
             <div class="col-12">
               <div class="row align-items-end">
-                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
                   <label
                     for="downloadSelect"
-                    class="form-label fw-semibold small"
+                    class="custom-label"
                   >
                     Download Split TDR Details
                   </label>
-                  <select class="form-select" id="downloadSelect">
+                  <select class="custom-select" id="downloadSelect">
                     <option value="" selected disabled>--Select--</option>
                     <option value="1">Split TDR List</option>
                     <option value="2">Recent Split TDR</option>
                   </select>
                 </div>
-                <div class="col-12 col-md-8 text-md-end d-grid d-md-block">
-                  <button type="button" class="btn btn-info">
-                    Download
-                  </button>
+                <div class="col-12 col-md-6 text-md-end">
+                  <button type="button" class="btn btn-info">Download</button>
                 </div>
               </div>
             </div>
@@ -272,70 +267,64 @@
       </div>
 
       <!-- TDR Split Table -->
-      <div class="card border border-light shadow-sm mt-4 rounded-2">
-        <div class="card-body p-3">
-          <div class="table-responsive rounded bg-white">
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive">
             <table
               id="tdrSplitTable"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Action</th>
-                  <th class="text-nowrap">Merchant</th>
-                  <th class="text-nowrap">Sub Merchant</th>
-                  <th class="text-nowrap">Currency</th>
-                  <th class="text-nowrap">Bank TID</th>
-                  <th class="text-nowrap">Payment Option</th>
-                  <th class="text-nowrap">Brand Type</th>
-                  <th class="text-nowrap">Bank Name</th>
-                  <th class="text-nowrap">Amount Range</th>
-                  <th class="text-nowrap">QPay TDR</th>
-                  <th class="text-nowrap">QPay TDR Unit</th>
-                  <th class="text-nowrap">Bank TDR</th>
-                  <th class="text-nowrap">Bank TDR Unit</th>
-                  <th class="text-nowrap">From Date</th>
-                  <th class="text-nowrap">Status</th>
-                  <th class="text-nowrap">Invoice Type</th>
-                  <th class="text-nowrap">Account ID</th>
-                  <th class="text-nowrap">Submerchant ID</th>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>Merchant</th>
+                  <th>Sub Merchant</th>
+                  <th>Currency</th>
+                  <th>Bank TID</th>
+                  <th>Payment Option</th>
+                  <th>Brand Type</th>
+                  <th>Bank Name</th>
+                  <th>Amount Range</th>
+                  <th>QPay TDR</th>
+                  <th>QPay TDR Unit</th>
+                  <th>Bank TDR</th>
+                  <th>Bank TDR Unit</th>
+                  <th>From Date</th>
+                  <th>Status</th>
+                  <th>Invoice Type</th>
+                  <th>Account ID</th>
+                  <th>Submerchant ID</th>
                 </tr>
               </thead>
-              <tbody class="text-start" style="font-size: 0.8rem">
+              <tbody>
                 <tr>
-                  <td class="py-2 px-3 text-muted">1</td>
-                  <td class="py-2 px-3">
+                  <td class="text-muted">1</td>
+                  <td>
                     <a
                       href="javascript:void(0)"
-                      class="text-decoration-none text-primary fw-medium"
+                      class="action-link"
                       title="Edit"
                       >Edit</a
                     >
                   </td>
-                  <td class="py-2 px-3 fw-medium text-dark">Merchant A</td>
-                  <td class="py-2 px-3">Sub Merchant 1</td>
-                  <td class="py-2 px-3">INR</td>
-                  <td class="py-2 px-3">TID123</td>
-                  <td class="py-2 px-3">CC</td>
-                  <td class="py-2 px-3">Visa</td>
-                  <td class="py-2 px-3">Test Bank</td>
-                  <td class="py-2 px-3">&lt;=2000</td>
-                  <td class="py-2 px-3">1.5</td>
-                  <td class="py-2 px-3">%</td>
-                  <td class="py-2 px-3">1.0</td>
-                  <td class="py-2 px-3">%</td>
-                  <td class="py-2 px-3">2026-01-01</td>
-                  <td
-                    class="py-2 px-3"
-                    style="font-weight: 500; color: #16a34a"
-                  >
-                    Active
-                  </td>
-                  <td class="py-2 px-3">Monthly</td>
-                  <td class="py-2 px-3">ACC123</td>
-                  <td class="py-2 px-3">SM123</td>
+                  <td class="fw-medium text-dark">Merchant A</td>
+                  <td>Sub Merchant 1</td>
+                  <td>INR</td>
+                  <td>TID123</td>
+                  <td>CC</td>
+                  <td>Visa</td>
+                  <td>Test Bank</td>
+                  <td>&lt;=2000</td>
+                  <td>1.5</td>
+                  <td>%</td>
+                  <td>1.0</td>
+                  <td>%</td>
+                  <td>2026-01-01</td>
+                  <td class="status-active">Active</td>
+                  <td>Monthly</td>
+                  <td>ACC123</td>
+                  <td>SM123</td>
                 </tr>
               </tbody>
             </table>
@@ -349,61 +338,55 @@
         </button>
       </div>
 
-      <div class="card border border-light shadow-sm mt-4 rounded-2">
-        <div class="card-body p-3">
-          <div class="table-responsive rounded bg-white">
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive">
             <table
               id="tdrSplitTable2"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Merchant</th>
-                  <th class="text-nowrap">Sub Merchant</th>
-                  <th class="text-nowrap">Currency</th>
-                  <th class="text-nowrap">Bank TID</th>
-                  <th class="text-nowrap">Payment Option</th>
-                  <th class="text-nowrap">Brand Type</th>
-                  <th class="text-nowrap">Bank Name</th>
-                  <th class="text-nowrap">Invoice Type</th>
-                  <th class="text-nowrap">QPay TDR</th>
-                  <th class="text-nowrap">QPay TDR Unit</th>
-                  <th class="text-nowrap">Bank TDR</th>
-                  <th class="text-nowrap">Bank TDR Unit</th>
-                  <th class="text-nowrap">From Date</th>
-                  <th class="text-nowrap">To Date</th>
-                  <th class="text-nowrap">Status</th>
-                  <th class="text-nowrap">Account ID</th>
-                  <th class="text-nowrap">Submerchant ID</th>
+                  <th>S.No</th>
+                  <th>Merchant</th>
+                  <th>Sub Merchant</th>
+                  <th>Currency</th>
+                  <th>Bank TID</th>
+                  <th>Payment Option</th>
+                  <th>Brand Type</th>
+                  <th>Bank Name</th>
+                  <th>Invoice Type</th>
+                  <th>QPay TDR</th>
+                  <th>QPay TDR Unit</th>
+                  <th>Bank TDR</th>
+                  <th>Bank TDR Unit</th>
+                  <th>From Date</th>
+                  <th>To Date</th>
+                  <th>Status</th>
+                  <th>Account ID</th>
+                  <th>Submerchant ID</th>
                 </tr>
               </thead>
-              <tbody class="text-start" style="font-size: 0.8rem">
+              <tbody>
                 <tr>
-                  <td class="py-2 px-3 text-muted">1</td>
-                  <td class="py-2 px-3 fw-medium text-dark">Merchant A</td>
-                  <td class="py-2 px-3">Sub Merchant 1</td>
-                  <td class="py-2 px-3">INR</td>
-                  <td class="py-2 px-3">TID123</td>
-                  <td class="py-2 px-3">CC</td>
-                  <td class="py-2 px-3">Visa</td>
-                  <td class="py-2 px-3">Test Bank</td>
-                  <td class="py-2 px-3">Monthly</td>
-                  <td class="py-2 px-3">1.5</td>
-                  <td class="py-2 px-3">%</td>
-                  <td class="py-2 px-3">1.0</td>
-                  <td class="py-2 px-3">%</td>
-                  <td class="py-2 px-3">2026-01-01</td>
-                  <td class="py-2 px-3">2026-12-31</td>
-                  <td
-                    class="py-2 px-3"
-                    style="font-weight: 500; color: #16a34a"
-                  >
-                    Active
-                  </td>
-                  <td class="py-2 px-3">ACC123</td>
-                  <td class="py-2 px-3">SM123</td>
+                  <td class="text-muted">1</td>
+                  <td class="fw-medium text-dark">Merchant A</td>
+                  <td>Sub Merchant 1</td>
+                  <td>INR</td>
+                  <td>TID123</td>
+                  <td>CC</td>
+                  <td>Visa</td>
+                  <td>Test Bank</td>
+                  <td>Monthly</td>
+                  <td>1.5</td>
+                  <td>%</td>
+                  <td>1.0</td>
+                  <td>%</td>
+                  <td>2026-01-01</td>
+                  <td>2026-12-31</td>
+                  <td class="status-active">Active</td>
+                  <td>ACC123</td>
+                  <td>SM123</td>
                 </tr>
               </tbody>
             </table>

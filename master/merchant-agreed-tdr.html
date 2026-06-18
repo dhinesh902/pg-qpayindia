@@ -7,154 +7,140 @@
   </head>
   <body>
     <div>
-      <h5 class="fw-bold mb-4">Merchant Agreed TDR</h5>
+      <div class="card shadow-sm border mb-4 top-card-global">
+        <div class="card-header py-3">
+          <h6 class="fw-bold mb-1">Merchant Agreed TDR Management</h6>
+          <small class="text-muted">
+            You are here : Master >
+            <strong class="text-dark">Merchant Agreed TDR</strong>
+          </small>
+        </div>
+      </div>
+
       <div class="card border border-light shadow-sm mb-4 rounded-2">
         <div class="card-body p-4">
           <form class="row g-4">
-            <!-- Merchant Select -->
-            <div class="col-12">
-              <div class="row align-items-end">
-                <div class="col-12 col-md-4 mb-3 mb-md-0">
-                  <label
-                    for="merchantSelect"
-                    class="form-label fw-semibold small"
-                  >
-                    Merchant
-                  </label>
-                  <select class="form-select" id="merchantSelect" required>
-                    <option value="" selected disabled>--Select--</option>
-                    <option value="1">Merchant A</option>
-                    <option value="2">Merchant B</option>
-                  </select>
-                </div>
-                <div class="col-12 col-md-4 mb-3 mb-md-0">
-                  <label
-                    for="paymentSelect"
-                    class="form-label fw-semibold small"
-                  >
-                    Payment Option
-                  </label>
-                  <select class="form-select" id="paymentSelect" required>
-                    <option value="" selected disabled>--Select--</option>
-                    <option value="1">Debit Card</option>
-                    <option value="2">Credit Card</option>
-                  </select>
-                </div>
-                <div class="col-12 col-md-4 mb-3 mb-md-0">
-                  <label
-                    for="currencySelect"
-                    class="form-label fw-semibold small"
-                  >
-                    Currency
-                  </label>
-                  <select class="form-select" id="currencySelect" required>
-                    <option value="1">INR</option>
-                    <option value="2">USD</option>
-                  </select>
-                </div>
-              </div>
+            <!-- Form Elements -->
+            <div class="col-12 col-md-6">
+              <label for="merchantSelect" class="custom-label">
+                Merchant
+              </label>
+              <select class="custom-select" id="merchantSelect" required>
+                <option value="" selected disabled>--Select--</option>
+                <option value="1">Merchant A</option>
+                <option value="2">Merchant B</option>
+              </select>
             </div>
 
-            <!-- Row 2 -->
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Agreed TDR</label>
-              <input type="text" class="form-control" />
+            <div class="col-12 col-md-6">
+              <label for="paymentSelect" class="custom-label">
+                Payment Option
+              </label>
+              <select class="custom-select" id="paymentSelect" required>
+                <option value="" selected disabled>--Select--</option>
+                <option value="1">Debit Card</option>
+                <option value="2">Credit Card</option>
+              </select>
             </div>
 
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">TDR Rate in</label>
+            <div class="col-12 col-md-6">
+              <label for="currencySelect" class="custom-label">
+                Currency
+              </label>
+              <select class="custom-select" id="currencySelect" required>
+                <option value="1">INR</option>
+                <option value="2">USD</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Agreed TDR</label>
+              <input type="text" class="custom-input" />
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="custom-label">TDR Rate in</label>
               <div class="d-flex flex-wrap gap-4 mt-1">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="tdrRatePct"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="tdrRatePct"
-                    >%</label
-                  >
+                  <label class="custom-check-label" for="tdrRatePct">%</label>
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="tdrRateFlat"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="tdrRateFlat"
+                  <label class="custom-check-label" for="tdrRateFlat"
                     >Flat</label
                   >
                 </div>
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Amount Range</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Amount Range</label>
               <div class="d-flex flex-wrap gap-4 mt-1">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="rangeLe2000"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="rangeLe2000"
+                  <label class="custom-check-label" for="rangeLe2000"
                     >&lt;=2000</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="rangeGt2000"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="rangeGt2000"
+                  <label class="custom-check-label" for="rangeGt2000"
                     >&gt;2000</label
                   >
                 </div>
               </div>
             </div>
 
-            <!-- Row 3 -->
-            <div class="col-12 col-md-4 d-flex align-items-end pb-2">
+            <div class="col-12 col-md-6 d-flex align-items-end pb-2">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="terminal" />
-                <label class="form-check-label small fw-semibold" for="terminal"
+                <input
+                  class="custom-check-input"
+                  type="checkbox"
+                  id="terminal"
+                />
+                <label class="custom-check-label" for="terminal"
                   >Terminal</label
                 >
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
-              <label class="form-label fw-semibold small">Status</label>
+            <div class="col-12 col-md-6">
+              <label class="custom-label">Status</label>
               <div class="d-flex flex-wrap gap-4 mt-1">
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="statusActive"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="statusActive"
+                  <label class="custom-check-label" for="statusActive"
                     >Active</label
                   >
                 </div>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    class="custom-check-input"
                     type="checkbox"
                     id="statusDeactive"
                   />
-                  <label
-                    class="form-check-label small fw-medium"
-                    for="statusDeactive"
+                  <label class="custom-check-label" for="statusDeactive"
                     >Deactive</label
                   >
                 </div>
@@ -172,66 +158,50 @@
         </div>
       </div>
 
-      <div class="card border-0 shadow-sm mt-4 rounded-2">
+      <div class="custom-table-card">
         <div
           class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
         >
-          <h6 class="fw-bold mb-0 text-dark">Merchant Agreed TDR</h6>
+          <h6 class="table-header-text">Merchant Agreed TDR</h6>
         </div>
-        <div class="card-body">
+        <div class="custom-table-card-body">
           <!-- Table -->
-          <div class="table-responsive bg-white">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
             <table
               id="merchantAgreeTDR"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Action</th>
-                  <th class="text-nowrap">Merchant Name</th>
-                  <th class="text-nowrap">Submerchant</th>
-                  <th class="text-nowrap">Payment Mode</th>
-                  <th class="text-nowrap">Brand / Bank</th>
-                  <th class="text-nowrap">Currency</th>
-                  <th class="text-nowrap">Agree TDR</th>
-                  <th class="text-nowrap">TDR Type</th>
-                  <th class="text-nowrap">Amount Range</th>
-                  <th class="text-nowrap">Status</th>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>Merchant Name</th>
+                  <th>Submerchant</th>
+                  <th>Payment Mode</th>
+                  <th>Brand / Bank</th>
+                  <th>Currency</th>
+                  <th>Agree TDR</th>
+                  <th>TDR Type</th>
+                  <th>Amount Range</th>
+                  <th>Status</th>
                 </tr>
               </thead>
 
-              <tbody id="merchantAgreeTDRBody" class="text-start">
+              <tbody id="merchantAgreeTDRBody">
                 <tr>
-                  <td class="py-2 px-3">1</td>
-                  <td class="py-2 px-3">
-                    <a
-                      href="#"
-                      class="me-3"
-                      style="
-                        text-decoration: none;
-                        color: #0d6efd;
-                        cursor: pointer;
-                      "
-                    >
-                      Edit
-                    </a>
+                  <td>1</td>
+                  <td>
+                    <a href="#" class="action-link edit-link"> Edit </a>
                   </td>
-                  <td class="py-2 px-3">Orange Retail</td>
-                  <td class="py-2 px-3">Orange Retail</td>
-                  <td class="py-2 px-3">Net Banking</td>
-                  <td class="py-2 px-3">All banks</td>
-                  <td class="py-2 px-3">INR</td>
-                  <td class="py-2 px-3">22.00</td>
-                  <td class="py-2 px-3">Flat</td>
-                  <td class="py-2 px-3">>2000</td>
-                  <td
-                    class="py-2 px-3"
-                    style="font-weight: 500; color: #16a34a"
-                  >
-                    Active
-                  </td>
+                  <td>Orange Retail</td>
+                  <td>Orange Retail</td>
+                  <td>Net Banking</td>
+                  <td>All banks</td>
+                  <td>INR</td>
+                  <td>22.00</td>
+                  <td>Flat</td>
+                  <td>>2000</td>
+                  <td class="status-active">Active</td>
                 </tr>
               </tbody>
             </table>
@@ -239,51 +209,50 @@
         </div>
       </div>
 
-      <div class="card border-0 shadow-sm mt-4 rounded-2">
+      <div class="custom-table-card">
         <div
           class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
         >
-          <h6 class="fw-bold mb-0 text-dark">Deactive Records</h6>
+          <h6 class="table-header-text">Deactive Records</h6>
         </div>
-        <div class="card-body">
+        <div class="custom-table-card-body">
           <!-- Table -->
-          <div class="table-responsive bg-white">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
             <table
               id="merchantAgreeTDR2"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Merchant Name</th>
-                  <th class="text-nowrap">Submerchant</th>
-                  <th class="text-nowrap">Payment Mode</th>
-                  <th class="text-nowrap">Brand / Bank</th>
-                  <th class="text-nowrap">Currency</th>
-                  <th class="text-nowrap">Agree TDR</th>
-                  <th class="text-nowrap">TDR Type</th>
-                  <th class="text-nowrap">Amount Range</th>
-                  <th class="text-nowrap">Terminal</th>
-                  <th class="text-nowrap">Active From</th>
-                  <th class="text-nowrap">Active To</th>
+                  <th>S.No</th>
+                  <th>Merchant Name</th>
+                  <th>Submerchant</th>
+                  <th>Payment Mode</th>
+                  <th>Brand / Bank</th>
+                  <th>Currency</th>
+                  <th>Agree TDR</th>
+                  <th>TDR Type</th>
+                  <th>Amount Range</th>
+                  <th>Terminal</th>
+                  <th>Active From</th>
+                  <th>Active To</th>
                 </tr>
               </thead>
 
-              <tbody id="merchantAgreeTDR2Body" class="text-start">
+              <tbody id="merchantAgreeTDR2Body">
                 <tr>
-                  <td class="py-2 px-3">1</td>
-                  <td class="py-2 px-3">Orange Retail</td>
-                  <td class="py-2 px-3">Orange Retail</td>
-                  <td class="py-2 px-3">Net Banking</td>
-                  <td class="py-2 px-3">All banks</td>
-                  <td class="py-2 px-3">INR</td>
-                  <td class="py-2 px-3">22.00</td>
-                  <td class="py-2 px-3">Flat</td>
-                  <td class="py-2 px-3">>2000</td>
-                  <td class="py-2 px-3">Y</td>
-                  <td class="py-2 px-3">23/08/2021 03:23:37</td>
-                  <td class="py-2 px-3">23/08/2021 03:23:37</td>
+                  <td>1</td>
+                  <td>Orange Retail</td>
+                  <td>Orange Retail</td>
+                  <td>Net Banking</td>
+                  <td>All banks</td>
+                  <td>INR</td>
+                  <td>22.00</td>
+                  <td>Flat</td>
+                  <td>>2000</td>
+                  <td>Y</td>
+                  <td>23/08/2021 03:23:37</td>
+                  <td>23/08/2021 03:23:37</td>
                 </tr>
               </tbody>
             </table>
@@ -309,7 +278,7 @@
         });
 
         if ($.fn.DataTable.isDataTable("#merchantAgreeTDR2")) {
-          $("#merchantAgreeTDR").DataTable().destroy();
+          $("#merchantAgreeTDR2").DataTable().destroy();
         }
         $("#merchantAgreeTDR2").DataTable({
           scrollX: true,

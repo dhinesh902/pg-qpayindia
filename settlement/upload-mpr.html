@@ -1,1 +1,382 @@
-<div class="p-4"><h3>Upload Mpr</h3><p>This is the Upload Mpr page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settlement Upload</title>
+  </head>
+  <body>
+    <div>
+      <!-- Form Section -->
+      <div class="card border border-light shadow-sm mb-4 rounded-2">
+        <div class="card-body p-4">
+          <form class="row g-4">
+            <div class="col-12 col-md-6">
+              <label for="paymentOption" class="custom-label">
+                Payment Option <strong class="text-danger">*</strong>
+              </label>
+              <select class="custom-select" id="paymentOption" required>
+                <option value="">--Select--</option>
+                <option value="tech">Tech Process</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="custom-label"
+                >Select MPR File <strong class="text-danger">*</strong></label
+              >
+              <input type="file" class="custom-input" required />
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="mprDate" class="custom-label">Date</label>
+              <input type="date" class="custom-input" id="mprDate" required />
+            </div>
+
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-primary px-4 me-2">
+                Submit
+              </button>
+              <button type="reset" class="btn btn-warning text-dark px-4">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- First Table -->
+      <div class="custom-table-card mt-4">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="table-header-text">Settlement Data</h6>
+        </div>
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
+            <table
+              id="mprFirstTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th class="text-nowrap">SNo</th>
+                  <th class="text-nowrap">Merchant Name</th>
+                  <th class="text-nowrap">Merchant Order ID</th>
+                  <th class="text-nowrap">Transaction ID</th>
+                  <th class="text-nowrap">Payment Option</th>
+                  <th class="text-nowrap">
+                    Card Type / Bank Name / Wallet Type
+                  </th>
+                  <th class="text-nowrap">Transaction Date</th>
+                  <th class="text-nowrap">Bank Transaction Amount (INR)</th>
+                  <th class="text-nowrap">Bank Commission (INR)</th>
+                  <th class="text-nowrap">Agreed TDR with Bank</th>
+                  <th class="text-nowrap">Bank Used Commission Rate</th>
+                  <th class="text-nowrap">Bank Tax (INR)</th>
+                  <th class="text-nowrap">Bank Used Tax Rate (%)</th>
+                  <th class="text-nowrap">Bank Net Settlement (INR)</th>
+                  <th class="text-nowrap">QPay TDR</th>
+                  <th class="text-nowrap">QPay Commission (INR)</th>
+                  <th class="text-nowrap">QP SGST Amount (INR)</th>
+                  <th class="text-nowrap">QP CGST Amount (INR)</th>
+                  <th class="text-nowrap">QP IGST Amount (INR)</th>
+                  <th class="text-nowrap">QPay Net Commission (INR)</th>
+                  <th class="text-nowrap">Payout to Merchant (INR)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 120px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Test Merchant</td>
+                  <td>ORD-1001</td>
+                  <td>TXN-98765</td>
+                  <td>Credit Card</td>
+                  <td>HDFC Bank</td>
+                  <td>21 Apr 2018</td>
+                  <td>1000.00</td>
+                  <td>15.00</td>
+                  <td>1.50</td>
+                  <td>1.50</td>
+                  <td>2.70</td>
+                  <td>18.00</td>
+                  <td>982.30</td>
+                  <td>2.00</td>
+                  <td>20.00</td>
+                  <td>1.80</td>
+                  <td>1.80</td>
+                  <td>0.00</td>
+                  <td>23.60</td>
+                  <td>976.40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-2 mt-4 text-dark px-1 medium">
+        <strong style="color: #01425b"
+          >Difference in payout based on agreed TDR and Bank/QPay TDR
+          split</strong
+        >
+      </div>
+
+      <!-- Second Table -->
+      <div class="custom-table-card mt-4">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="table-header-text">Payout Details</h6>
+        </div>
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
+            <table
+              id="mprSecondTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th class="text-nowrap">SNo</th>
+                  <th class="text-nowrap">QPay Id</th>
+                  <th class="text-nowrap">Transaction Amount</th>
+                  <th class="text-nowrap">Payment Option</th>
+                  <th class="text-nowrap">Payout as per Merchant Agreed TDR</th>
+                  <th class="text-nowrap">Payout as per TDR Split</th>
+                  <th class="text-nowrap">Difference in Payout</th>
+                  <th class="text-nowrap">Agreed TDR</th>
+                  <th class="text-nowrap">Agreed TDR Unit</th>
+                  <th class="text-nowrap">Agreed TDR Value</th>
+                  <th class="text-nowrap">GST</th>
+                  <th class="text-nowrap">Payout on Agreed TDR</th>
+                  <th class="text-nowrap">Commission Rate Unit</th>
+                  <th class="text-nowrap">Bank TDR in Back Office</th>
+                  <th class="text-nowrap">QPay Calculated Bank TDR</th>
+                  <th class="text-nowrap">Bank Calculated TDR Value</th>
+                  <th class="text-nowrap">Bank CGST</th>
+                  <th class="text-nowrap">Bank SGST</th>
+                  <th class="text-nowrap">Bank IGST</th>
+                  <th class="text-nowrap">Bank Payout</th>
+                  <th class="text-nowrap">QPay TDR</th>
+                  <th class="text-nowrap">QPay TDR Value</th>
+                  <th class="text-nowrap">QPay CGST</th>
+                  <th class="text-nowrap">QPay SGST</th>
+                  <th class="text-nowrap">QPay IGST</th>
+                  <th class="text-nowrap">QPay TDR with GST</th>
+                  <th class="text-nowrap">Total Payout to Merchant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>QP-1002</td>
+                  <td>1000.00</td>
+                  <td>Credit Card</td>
+                  <td>976.40</td>
+                  <td>976.40</td>
+                  <td>0.00</td>
+                  <td>2.00</td>
+                  <td>%</td>
+                  <td>20.00</td>
+                  <td>3.60</td>
+                  <td>976.40</td>
+                  <td>%</td>
+                  <td>1.50</td>
+                  <td>1.50</td>
+                  <td>15.00</td>
+                  <td>1.35</td>
+                  <td>1.35</td>
+                  <td>0.00</td>
+                  <td>982.30</td>
+                  <td>0.50</td>
+                  <td>5.00</td>
+                  <td>0.45</td>
+                  <td>0.45</td>
+                  <td>0.00</td>
+                  <td>5.90</td>
+                  <td>976.40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#mprFirstTable")) {
+          $("#mprFirstTable").DataTable().destroy();
+        }
+        $("#mprFirstTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+
+        if ($.fn.DataTable.isDataTable("#mprSecondTable")) {
+          $("#mprSecondTable").DataTable().destroy();
+        }
+        $("#mprSecondTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

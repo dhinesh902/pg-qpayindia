@@ -1,1 +1,125 @@
-<div class="p-4"><h3>Settlement Approval</h3><p>This is the Settlement Approval page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settlement Approval</title>
+  </head>
+  <body>
+    <!-- Form Section -->
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="exceldate" class="custom-label">MIS Excel Date</label>
+            <input type="date" class="custom-input" id="exceldate" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="settlementdate" class="custom-label"
+              >Settlement Date</label
+            >
+            <input
+              type="date"
+              class="custom-input"
+              id="settlementdate"
+              required
+            />
+          </div>
+
+          <div class="col-12">
+            <div class="horizontal-scroll d-flex gap-2 flex-nowrap pb-2">
+              <button
+                type="button"
+                class="btn btn-primary flex-shrink-0 text-nowrap"
+              >
+                Approve Settlement
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-warning flex-shrink-0 text-nowrap"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-info flex-shrink-0 text-nowrap"
+              >
+                Send Settlement Mail
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="custom-table-card">
+      <div
+        class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+      >
+        <h6 class="table-header-text">Settlement Details</h6>
+      </div>
+      <div class="custom-table-card-body">
+        <!-- Table -->
+        <div class="custom-table-responsive" style="overflow-x: hidden">
+          <table
+            id="settlementDetailTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th><input class="custom-check-input" type="checkbox" /></th>
+                <th>Settlement On</th>
+                <th>Merchant Name</th>
+                <th>Transaction count</th>
+                <th>Total Amount</th>
+                <th>Commission</th>
+                <th>Net Amount</th>
+                <th>Currency</th>
+                <th>Actual Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="text-muted">1</td>
+                <td><input class="custom-check-input" type="checkbox" /></td>
+                <td>01/Jun/2026</td>
+                <td>Xencia Technology Solutions Pvt Ltd</td>
+                <td>1</td>
+                <td>24521.00</td>
+                <td>506.36</td>
+                <td>24014.64</td>
+                <td>INR</td>
+                <td>24521.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#settlementDetailTable")) {
+          $("#settlementDetailTable").DataTable().destroy();
+        }
+        $("#settlementDetailTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          columnDefs: [{ orderable: false, targets: 1 }],
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

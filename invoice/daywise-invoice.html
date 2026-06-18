@@ -1,1 +1,68 @@
-<div class="p-4"><h3>Daywise Invoice</h3><p>This is the Daywise Invoice page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daywise: Invoice Generation</title>
+  </head>
+  <body>
+    <div class="col-12 mb-4">
+      <div class="note-card">No transaction found on the given period of date</div>
+    </div>
+    <!-- Form Section -->
+    <div class="card border-0 shadow-sm rounded-2">
+      <div class="card-body p-4">
+        <div class="row">
+          <div class="col-12">
+            <form class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="fromdate" class="custom-label"
+                  >Transaction From-Date
+                  <strong class="text-danger">*</strong></label
+                >
+                <input
+                  type="date"
+                  class="custom-input"
+                  id="fromdate"
+                  required
+                />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="todate" class="custom-label"
+                  >Transaction To-Date
+                  <strong class="text-danger">*</strong></label
+                >
+                <input type="date" class="custom-input" id="todate" required />
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="todate" class="custom-label"
+                  >Invoice Date <strong class="text-danger">*</strong></label
+                >
+                <input type="date" class="custom-input" id="todate" required />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="merchantselection" class="custom-label">
+                  Merchant Name <strong class="text-danger">*</strong>
+                </label>
+                <select class="custom-select" id="merchantselection" required>
+                  <option value="">--Select--</option>
+                  <option value="all">ALL</option>
+                  <option value="merchant">Merchant B</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary me-2">
+                  Generate Invoice
+                </button>
+                <button type="submit" class="btn-view">View Invoice</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

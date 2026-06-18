@@ -1,1 +1,211 @@
-<div class="p-4"><h3>Settled Unsettled Transactions</h3><p>This is the Settled Unsettled Transactions page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency</title>
+  </head>
+
+  <body>
+    <div>
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="exceldate" class="custom-label">Date From</label>
+                  <input
+                    type="date"
+                    class="custom-input"
+                    id="exceldate"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="exceldate" class="custom-label">Date To</label>
+                  <input
+                    type="date"
+                    class="custom-input"
+                    id="exceldate"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="merchantselection" class="custom-label">
+                    Merchant Name <strong class="text-danger">*</strong>
+                  </label>
+                  <select class="custom-select" id="merchantselection" required>
+                    <option value="all">ALL</option>
+                    <option value="merchant">Merchant B</option>
+                  </select>
+                </div>
+
+                <div class="col-12 mt-4 d-flex gap-2">
+                  <button type="submit" class="btn btn-primary px-4">
+                    Submit
+                  </button>
+                  <button type="button" class="btn btn-info">
+                    Transaction Download
+                  </button>
+                  <button type="button" class="btn btn-info">
+                    MPR Data Download
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transactions -->
+      <div class="custom-table-card">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="table-header-text">Transactions</h6>
+        </div>
+        <div class="custom-table-card-body">
+          <!-- Table -->
+          <div class="custom-table-responsive">
+            <table
+              id="transactionTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th>S.No</th>
+                  <th>Date</th>
+                  <th>Qpay ID</th>
+                  <th>Merchant Name</th>
+                  <th>Sub Merchant Name</th>
+                  <th>TID</th>
+                  <th>Currency</th>
+                  <th>Amount (INR)</th>
+                  <th>Status</th>
+                  <th>Settlement Date</th>
+                </tr>
+              </thead>
+
+              <tbody id="transactionTableBody">
+                <tr>
+                  <td>1</td>
+                  <td>14-06-2026</td>
+                  <td>929830</td>
+                  <td>Sadguru Swami Sri Gnanananda Giri Memorial Trust</td>
+                  <td>G Thapovanam Sri Gnanananda Trust</td>
+                  <td>ab5fce30-0373-4446-b9dd-4c5f22e501c4</td>
+                  <td>INR</td>
+                  <td>300.00</td>
+                  <td>Settled</td>
+                  <td>17-06-2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settlement Data -->
+      <div class="custom-table-card">
+        <div
+          class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+        >
+          <h6 class="table-header-text">Settlement Data</h6>
+        </div>
+        <div class="custom-table-card-body">
+          <!-- Table -->
+          <div class="custom-table-responsive">
+            <table
+              id="settlementTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th>S.No</th>
+                  <th>Date</th>
+                  <th>Qpay ID</th>
+                  <th>Merchant Name</th>
+                  <th>Amount (INR)</th>
+                  <th>Qpay Commission Rate (INR)</th>
+                  <th>Qpay Commission</th>
+                  <th>Qpay Tax 1</th>
+                  <th>Qpay Tax 2</th>
+                  <th>Qpay Tax 3</th>
+                  <th>Qpay Settlement Amount (INR)</th>
+                  <th>Commission Type</th>
+                  <th>Merchant Payout</th>
+                  <th>Bank MSF</th>
+                  <th>Bank Tax 1</th>
+                  <th>Bank Tax 2</th>
+                  <th>Bank Tax 3</th>
+                </tr>
+              </thead>
+
+              <tbody id="transactionTableBody">
+                <tr>
+                  <td>1</td>
+                  <td>14-06-2026</td>
+                  <td>929830</td>
+                  <td>Sadguru Swami Sri Gnanananda Giri Memorial Trust</td>
+                  <td>500.00</td>
+                  <td>1.30</td>
+                  <td>6.50</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>6.50</td>
+                  <td>%</td>
+                  <td>493.50</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#transactionTable")) {
+          $("#transactionTable").DataTable().destroy();
+        }
+        $("#transactionTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+
+        // Settlement Table
+
+        if ($.fn.DataTable.isDataTable("#settlementTable")) {
+          $("#settlementTable").DataTable().destroy();
+        }
+        $("#settlementTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

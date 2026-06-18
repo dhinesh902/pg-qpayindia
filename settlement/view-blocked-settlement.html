@@ -1,1 +1,159 @@
-<div class="p-4"><h3>View Blocked Settlement</h3><p>This is the View Blocked Settlement page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Blocked Settlement</title>
+  </head>
+
+  <body>
+    <div>
+      <div
+        class="d-flex flex-wrap flex-md-nowrap justify-content-between align-items-center mb-4 gap-3"
+      >
+        <div class="note-card flex-grow-1 w-100 mb-0" style="margin: 0">
+          <strong>10</strong> record(s) found.
+        </div>
+
+        <div class="dropdown flex-shrink-0">
+          <button
+            class="btn btn-primary d-flex align-items-center flex-nowrap shadow-sm px-3 py-2"
+            type="button"
+            id="customSearchDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-auto-close="outside"
+            style="border-radius: 6px; font-weight: 500; letter-spacing: 0.3px"
+          >
+            <i class="bi bi-search me-2"></i> Search
+          </button>
+          <div
+            class="dropdown-menu dropdown-menu-end p-4 shadow border border-light"
+            aria-labelledby="customSearchDropdown"
+            style="width: 300px; border-radius: 12px; background-color: #ffffff"
+          >
+            <h6 class="mb-3 fw-bold text-dark border-bottom pb-2">
+              Search Criteria
+            </h6>
+            <form>
+              <div class="mb-3">
+                <select class="custom-select">
+                  <option>Transaction Id</option>
+                  <option>Transaction Date</option>
+                  <option>Amount</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="custom-input"
+                  placeholder="Enter search term..."
+                  required
+                />
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-primary" type="submit">Done</button>
+                <button class="btn btn-warning" type="reset">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table card -->
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
+            <table
+              id="viewBlockedSettlementTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+            >
+              <thead class="custom-table-light">
+                <tr>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>TransactionId</th>
+                  <th>Transaction Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Dispute Date</th>
+                  <th>Comments</th>
+                  <th>Resolved Date</th>
+                  <th>Settlement Date</th>
+                </tr>
+              </thead>
+              <tbody id="viewBlockedSettlementBody">
+                <tr>
+                  <td>1</td>
+                  <td><input type="checkbox" class="custom-check-input" /></td>
+                  <td class="text-muted">14595</td>
+                  <td class="text-muted">21 Apr<br />2018</td>
+                  <td class="text-muted">22850.00</td>
+                  <td class="text-muted">Blocked</td>
+                  <td class="text-muted">02 May<br />2018</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="date"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="date"
+                      class="custom-input px-2 py-1"
+                      style="min-width: 100px; height: 32px"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr />
+          <div class="col-12">
+            <div class="horizontal-scroll d-flex gap-2 flex-nowrap pb-2">
+              <button
+                type="button"
+                class="btn btn-primary flex-shrink-0 text-nowrap"
+              >
+                Update
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-warning flex-shrink-0 text-nowrap"
+              >
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#viewBlockedSettlementTable")) {
+          $("#viewBlockedSettlementTable").DataTable().destroy();
+        }
+        $("#viewBlockedSettlementTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

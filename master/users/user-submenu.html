@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Submenu</title>
+  </head>
+  <body>
+    <!-- Form Section -->
+    <div class="card border-0 shadow-sm rounded-2">
+      <div class="card-body p-4">
+        <div class="row">
+          <div class="col-12">
+            <form class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="custom-label"> First Name </label>
+                <p class="small text-dark">Visual Point</p>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="custom-label"> User Name </label>
+                <p class="small text-dark">vis_EC297B</p>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="custom-label"> User Group </label>
+                <p class="small text-dark">Merchant</p>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="menugroup" class="custom-label">
+                  Select Menu <strong class="text-danger">*</strong>
+                </label>
+                <select class="custom-select" id="menugroup" required>
+                  <option value="" selected disabled>--Select--</option>
+                  <option value="admin">SMS Payment Link</option>
+                  <option value="merchant">Refund</option>
+                  <option value="reseller">Invoice Bill</option>
+                </select>
+              </div>
+              <div class="col-12 mb-3">
+                <div
+                  class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-2"
+                >
+                  <label for="merchantSelect" class="custom-label mb-0">
+                    Select Menu <strong class="text-danger">*</strong>
+                    <span class="fst-italic small fw-normal">
+                      (drag & drop to reorder)
+                    </span>
+                  </label>
+
+                  <div class="d-flex flex-sm-row gap-2">
+                    <button type="button" class="btn btn-outline-success">
+                      Select All
+                    </button>
+
+                    <button type="button" class="btn btn-outline-danger">
+                      Deselect All
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 mt-1">
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                  <li
+                    class="d-flex align-items-center gap-2"
+                    style="cursor: grab"
+                  >
+                    <input
+                      class="custom-check-input mt-0"
+                      type="checkbox"
+                      id="smsPaymentLink"
+                    />
+                    <i class="bi bi-folder-fill text-warning fs-6"></i>
+                    <label
+                      class="custom-check-label fw-normal small text-dark"
+                      for="smsPaymentLink"
+                      >SMS Payment Link</label
+                    >
+                  </li>
+                  <li
+                    class="d-flex align-items-center gap-2"
+                    style="cursor: grab"
+                  >
+                    <input
+                      class="custom-check-input mt-0"
+                      type="checkbox"
+                      id="settings"
+                    />
+                    <i class="bi bi-folder-fill text-warning fs-6"></i>
+                    <label
+                      class="custom-check-label fw-normal small text-dark"
+                      for="settings"
+                      >Settings</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <hr />
+              <div class="col-12 mt-3 d-flex gap-2">
+                <button type="submit" class="btn btn-primary px-4">
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

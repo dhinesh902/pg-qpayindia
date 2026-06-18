@@ -1,1 +1,105 @@
-<div class="p-4"><h3>Merchant Wise Settlement</h3><p>This is the Merchant Wise Settlement page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchant Wise Commission Report</title>
+  </head>
+
+  <body>
+    <!-- Form Section -->
+    <div class="card border-0 shadow-sm rounded-2">
+      <div class="card-body p-4">
+        <div class="row">
+          <div class="col-12">
+            <form class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="merchantName" class="custom-label">Month</label>
+                <select class="custom-select" id="merchantName">
+                  <option value="m1">Jan</option>
+                  <option value="m2">Feb</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="merchantName" class="custom-label">Year</label>
+                <select class="custom-select" id="merchantName">
+                  <option value="m1">2025</option>
+                  <option value="m2">2026</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary me-2">
+                  Submit
+                </button>
+                <button type="submit" class="btn btn-info">Download</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-table-card">
+      <div class="custom-table-card-body">
+        <!-- Table -->
+        <div class="custom-table-responsive">
+          <table
+            id="currencyTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th>Merchant Name</th>
+                <th>Invoice Master ID</th>
+                <th>Invoice Date</th>
+                <th>MSF</th>
+                <th>BankKKcess</th>
+                <th>Qpay Commssion</th>
+                <th>QpayServicetaxvalue</th>
+                <th>QPsbcessvalue</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+
+            <tbody id="currencyTableBody">
+              <tr>
+                <td>1</td>
+                <td>Sun Software Solutions Pvt Ltd</td>
+                <td>QPay1001 / 24 - 25</td>
+                <td>31/01/2025</td>
+                <td>548.02</td>
+                <td>0.00</td>
+                <td>182.41</td>
+                <td>16.44</td>
+                <td>16.44</td>
+                <td>763.31</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#currencyTable")) {
+          $("#currencyTable").DataTable().destroy();
+        }
+        $("#currencyTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

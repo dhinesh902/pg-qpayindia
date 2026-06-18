@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Status</title>
+  </head>
+  <body>
+    <div>
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
+          <div class="custom-table-responsive" style="overflow-x: hidden">
+            <table
+              id="userStatusTable"
+              class="custom-table custom-table-bordered custom-align-middle custom-mb-0"
+              style="text-align: left"
+            >
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>User Name</th>
+                  <th>Last time logged in</th>
+                  <th>Not logged since last login(days)</th>
+                </tr>
+              </thead>
+              <tbody id="userStatusTableBody">
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <a href="#" class="action-link edit-link"> Deactivate </a>
+                  </td>
+                  <td>tirupoomi</td>
+                  <td>17/06/2026 16:50:00</td>
+                  <td class="text-center">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#userStatusTable")) {
+          $("#userStatusTable").DataTable().destroy();
+        }
+        $("#userStatusTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>

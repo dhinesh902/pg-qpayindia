@@ -1,1 +1,51 @@
-<div class="p-4"><h3>Gst Datewise</h3><p>This is the Gst Datewise page.</p></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date-Wise Transaction Report</title>
+  </head>
+
+  <body>
+    <div>
+      <!-- Form Section -->
+      <div class="card border-0 shadow-sm rounded-2">
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <form class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="fromdate" class="custom-label">
+                    Start Date
+                  </label>
+                  <input
+                    type="date"
+                    class="custom-input"
+                    id="fromdate"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="todate" class="custom-label"> End Date </label>
+                  <input
+                    type="date"
+                    class="custom-input"
+                    id="todate"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-info me-2">
+                    Download Report
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

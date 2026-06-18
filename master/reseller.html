@@ -7,7 +7,6 @@
   </head>
   <body>
     <div>
-      <h5 class="fw-bold mb-4">Reseller Master</h5>
 
       <!-- Form Section -->
       <div class="card border-0 shadow-sm rounded-2">
@@ -16,68 +15,68 @@
             <div class="col-12">
               <form class="row g-3">
                 <!-- row 1 -->
-                <div class="col-12 col-md-4">
-                  <label for="companyname" class="form-label fw-semibold small">
+                <div class="col-12 col-md-6">
+                  <label for="companyname" class="custom-label">
                     Company Name <strong class="text-danger">*</strong>
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-input"
                     id="companyname"
                     required
                   />
                 </div>
-                <div class="col-12 col-md-4">
-                  <label for="contactname" class="form-label fw-semibold small">
+                <div class="col-12 col-md-6">
+                  <label for="contactname" class="custom-label">
                     Contact Name <strong class="text-danger">*</strong>
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-input"
                     id="contactname"
                     required
                   />
                 </div>
-                <div class="col-12 col-md-4">
-                  <label for="email" class="form-label fw-semibold small">
+                <div class="col-12 col-md-6">
+                  <label for="email" class="custom-label">
                     Email <strong class="text-danger">*</strong>
                   </label>
-                  <input type="text" class="form-control" id="email" required />
+                  <input type="text" class="custom-input" id="email" required />
                 </div>
 
                 <!-- row 2 -->
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6">
                   <label
                     for="mobilenumber"
-                    class="form-label fw-semibold small"
+                    class="custom-label"
                   >
                     Mobile Number <strong class="text-danger">*</strong>
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-input"
                     id="mobilenumber"
                     maxlength="10"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                     required
                   />
                 </div>
-                <div class="col-12 col-md-4">
-                  <label for="address" class="form-label fw-semibold small">
+                <div class="col-12 col-md-6">
+                  <label for="address" class="custom-label">
                     Address <strong class="text-danger">*</strong>
                   </label>
                   <textarea
-                    class="form-control"
+                    class="custom-input"
                     rows="1"
                     id="address"
                     required
                   ></textarea>
                 </div>
-                <div class="col-12 col-md-4">
-                  <label class="form-label fw-semibold small"
+                <div class="col-12 col-md-6">
+                  <label class="custom-label"
                     >State <strong class="text-danger">*</strong></label
                   >
-                  <select class="form-select" required>
+                  <select class="custom-select" required>
                     <option value="" disabled selected>--Select--</option>
                     <option value="credit">Tamil Nadu</option>
                   </select>
@@ -96,50 +95,44 @@
       </div>
 
       <!-- Data Table -->
-      <div class="card border-0 shadow-sm mt-4 rounded-2">
-        <div class="card-body">
+      <div class="custom-table-card">
+        <div class="custom-table-card-body">
           <!-- Table -->
-          <div class="table-responsive bg-white">
+          <div class="custom-table-responsive">
             <table
               id="resellerTable"
-              class="table table-bordered table-hover align-middle text-center mb-0"
-              style="width: 100%"
+              class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
             >
-              <thead class="table-light">
+              <thead class="custom-table-light">
                 <tr>
-                  <th class="text-nowrap">S.No</th>
-                  <th class="text-nowrap">Action</th>
-                  <th class="text-nowrap">Company Name</th>
-                  <th class="text-nowrap">Contact Name</th>
-                  <th class="text-nowrap">Email</th>
-                  <th class="text-nowrap">Mobile</th>
-                  <th class="text-nowrap">Address</th>
-                  <th class="text-nowrap">State</th>
+                  <th>S.No</th>
+                  <th>Action</th>
+                  <th>Company Name</th>
+                  <th>Contact Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Address</th>
+                  <th>State</th>
                 </tr>
               </thead>
 
-              <tbody id="resellerTableBody" class="text-start">
+              <tbody id="resellerTableBody" >
                 <tr>
-                  <td class="py-2 px-3">1</td>
-                  <td class="py-2 px-3">
+                  <td>1</td>
+                  <td>
                     <a
                       href="#"
-                      class="me-3"
-                      style="
-                        text-decoration: none;
-                        color: #0d6efd;
-                        cursor: pointer;
-                      "
+                      class="action-link edit-link"
                     >
                       Edit
                     </a>
                   </td>
-                  <td class="py-2 px-3">BoomiReseller</td>
-                  <td class="py-2 px-3">Boomi</td>
-                  <td class="py-2 px-3">t_poomi@yahoo.com</td>
-                  <td class="py-2 px-3">9940620013</td>
-                  <td class="py-2 px-3">3/2, South Road</td>
-                  <td class="py-2 px-3">Tamil Nadu</td>
+                  <td>BoomiReseller</td>
+                  <td>Boomi</td>
+                  <td>t_poomi@yahoo.com</td>
+                  <td>9940620013</td>
+                  <td>3/2, South Road</td>
+                  <td>Tamil Nadu</td>
                 </tr>
               </tbody>
             </table>
